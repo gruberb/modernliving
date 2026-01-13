@@ -1,0 +1,7 @@
+# robots.txt for liveattreehouse.ca
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://liveattreehouse.ca/sitemap.xml
