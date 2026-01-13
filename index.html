@@ -1222,13 +1222,15 @@
             </div>
 
             <div class="media-content">
-                <video controls style="width: 100%">
-                    <source
-                        src="videos/treehouse_flyover.mp4"
-                        type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                </video>
+                <iframe
+                    allow="fullscreen"
+                    allowfullscreen="true"
+                    frameborder="0"
+                    scrolling="no"
+                    width="100%"
+                    height="500"
+                    src="https://api.smugmug.com/services/embed/17431209601_NtBKT5S?width=1920&height=1080&albumId=454553260&albumKey=ZZtVWZ"
+                ></iframe>
             </div>
         </section>
 
@@ -1598,7 +1600,7 @@
 
                     if (tabText === "Video") {
                         content.innerHTML =
-                            '<video controls style="width: 100%;"><source src="videos/treehouse_flyover.mp4" type="video/mp4">Your browser does not support the video tag.</video>';
+                            '<iframe allow="fullscreen" allowfullscreen="true" frameborder="0" scrolling="no" width="100%" height="500" src="https://api.smugmug.com/services/embed/17431209601_NtBKT5S?width=1920&height=1080&albumId=454553260&albumKey=ZZtVWZ"></iframe>';
                     } else if (tabText === "3D Tour") {
                         content.innerHTML =
                             '<div style="padding: 3rem; text-align: center; color: var(--text-gray);">Interactive 3D walkthrough coming soon</div>';
