@@ -510,12 +510,19 @@
             }
 
             .media-content {
-                min-height: 500px;
                 background: var(--white);
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 color: var(--text-gray);
+                position: relative;
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+
+            .media-content iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
             }
 
             /* Investment Section */
@@ -1227,8 +1234,6 @@
                     allowfullscreen="true"
                     frameborder="0"
                     scrolling="no"
-                    width="100%"
-                    height="500"
                     src="https://api.smugmug.com/services/embed/17431209601_NtBKT5S?width=1920&height=1080&albumId=454553260&albumKey=ZZtVWZ"
                 ></iframe>
             </div>
