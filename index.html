@@ -822,26 +822,48 @@
                     padding: 4rem 2rem;
                 }
 
+                .hero {
+                    min-height: auto;
+                    height: auto;
+                    padding-bottom: 2rem;
+                }
+
                 .hero-content {
-                    padding: 0 2rem;
+                    padding: 6rem 2rem 2rem 2rem;
                 }
 
                 .hero h1 {
-                    font-size: 3rem;
-                }
-
-                .section-title {
                     font-size: 2.5rem;
                 }
 
+                .section-title {
+                    font-size: 2rem;
+                }
+
+                .stats-bar {
+                    position: relative;
+                    bottom: auto;
+                    left: auto;
+                    transform: none;
+                    width: calc(100% - 2rem);
+                    margin: 0 auto;
+                    margin-top: 1.5rem;
+                }
+
                 .stats-container {
-                    padding: 1.5rem 2rem;
-                    flex-wrap: wrap;
-                    gap: 1.5rem;
+                    padding: 1.5rem;
+                    flex-direction: column;
+                    gap: 0;
                 }
 
                 .stat {
-                    flex: 1 1 45%;
+                    padding: 1rem 0;
+                    border-right: none;
+                    border-bottom: 1px solid var(--border-gray);
+                }
+
+                .stat:last-child {
+                    border-bottom: none;
                 }
 
                 .nav-links {
@@ -851,6 +873,30 @@
                 .features-container {
                     grid-template-columns: 1fr;
                     gap: 2rem;
+                }
+
+                .about-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .about-sidebar {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 2rem;
+                }
+
+                .gallery-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                }
+
+                .location-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .investment-grid {
+                    grid-template-columns: 1fr;
                 }
             }
         </style>
