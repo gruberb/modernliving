@@ -825,15 +825,21 @@
                 .hero {
                     min-height: auto;
                     height: auto;
-                    padding-bottom: 2rem;
+                    padding-bottom: 0;
+                    flex-direction: column;
                 }
 
                 .hero-content {
-                    padding: 6rem 2rem 2rem 2rem;
+                    padding: 6rem 1.5rem 2rem 1.5rem;
                 }
 
                 .hero h1 {
-                    font-size: 2.5rem;
+                    font-size: 2.25rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.2rem;
+                    margin-bottom: 2rem;
                 }
 
                 .section-title {
@@ -849,43 +855,52 @@
                     margin: 0;
                     border-radius: 0;
                     box-shadow: none;
-                    border-top: 1px solid var(--border-gray);
+                    background: var(--white);
                 }
 
                 .stats-container {
-                    padding: 1rem 1.5rem;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    gap: 0.5rem;
+                    padding: 1.25rem 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
                 }
 
                 .stat {
-                    padding: 0;
-                    flex-direction: column;
+                    padding: 0.75rem;
+                    flex-direction: row;
                     align-items: center;
-                    gap: 0.25rem;
+                    justify-content: flex-start;
+                    gap: 0.75rem;
                     border-right: none;
-                    flex: 1;
+                    flex: none;
+                    background: #f8f9fa;
+                    border-radius: 8px;
                 }
 
                 .stat-icon {
-                    width: 28px;
-                    height: 28px;
+                    width: 36px;
+                    height: 36px;
+                    flex-shrink: 0;
                 }
 
                 .stat-icon svg {
-                    width: 20px;
-                    height: 20px;
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .stat-info {
+                    min-width: 0;
                 }
 
                 .stat-value {
-                    font-size: 0.9rem;
-                    text-align: center;
+                    font-size: 0.95rem;
+                    text-align: left;
+                    white-space: nowrap;
                 }
 
                 .stat-label {
                     font-size: 0.7rem;
-                    text-align: center;
+                    text-align: left;
                 }
 
                 .nav-links {
