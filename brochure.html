@@ -1,643 +1,803 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1-25 Treehouse Lane | Brochure</title>
-    <meta name="description" content="Printable brochure for 1-25 Treehouse Lane condo in Bridgewater, NS. 3-bedroom unit in Atlantic Canada's first cohousing community. $589,000.">
-
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="Bridgewater real estate, Nova Scotia condo, cohousing community, Passive House, South Shore NS, Treehouse Lane, sustainable living, property brochure">
-    <meta name="author" content="Modern Living Cohousing">
-    <link rel="canonical" href="https://liveattreehouse.ca/brochure.html">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/favicon.svg">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://liveattreehouse.ca/brochure.html">
-    <meta property="og:title" content="1-25 Treehouse Lane | Property Brochure">
-    <meta property="og:description" content="Printable brochure for 1-25 Treehouse Lane condo in Bridgewater, NS. 3-bedroom unit in Atlantic Canada's first cohousing community.">
-    <meta property="og:image" content="https://liveattreehouse.ca/images/12_Common_great-hall_1024by768.jpg">
-    <meta property="og:locale" content="en_CA">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://liveattreehouse.ca/brochure.html">
-    <meta property="twitter:title" content="1-25 Treehouse Lane | Property Brochure">
-    <meta property="twitter:description" content="Printable brochure for 1-25 Treehouse Lane condo in Bridgewater, NS. 3-bedroom unit in Atlantic Canada's first cohousing community.">
-    <meta property="twitter:image" content="https://liveattreehouse.ca/images/12_Common_great-hall_1024by768.jpg">
-
-    <!-- Additional Meta Tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="geo.region" content="CA-NS">
-    <meta name="geo.placename" content="Bridgewater">
-
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://analytics.novanexus.ca/js/pa-8LP35eJz5gQXBKr_9X1Ug.js"></script>
-    <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        @page {
-            size: letter;
-            margin: 0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-green: #6bc045;
-            --dark-gray: #1a1a1a;
-            --medium-gray: #4a4a4a;
-            --light-gray: #f5f5f5;
-            --border-gray: #e0e0e0;
-            --text-gray: #666666;
-            --accent-warm: #d4a574;
-            --stat-blue: #2c4a5e;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark-gray);
-            background: var(--white);
-            line-height: 1.6;
-            font-weight: 400;
-            font-size: 11pt;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-
-        .page {
-            width: 8.5in;
-            min-height: 11in;
-            padding: 0.5in;
-            margin: 0 auto;
-            background: white;
-            page-break-after: always;
-        }
-
-        .page:last-child {
-            page-break-after: avoid;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            padding-bottom: 0.3in;
-            border-bottom: 2px solid var(--primary-green);
-            margin-bottom: 0.3in;
-        }
-
-        .header h1 {
-            font-size: 32pt;
-            color: var(--dark-gray);
-            margin-bottom: 0.1in;
-        }
-
-        .header .subtitle {
-            font-size: 14pt;
-            color: var(--medium-gray);
-            font-weight: 300;
-        }
-
-        .header .price {
-            font-size: 24pt;
-            color: var(--primary-green);
-            font-weight: 500;
-            margin-top: 0.1in;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            display: flex;
-            justify-content: space-around;
-            background: var(--light-gray);
-            border-radius: 8px;
-            padding: 0.2in 0.3in;
-            margin-bottom: 0.3in;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 0 0.2in;
-            border-right: 1px solid var(--border-gray);
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat-value {
-            font-size: 16pt;
-            font-weight: 500;
-            color: var(--stat-blue);
-        }
-
-        .stat-label {
-            font-size: 9pt;
-            color: var(--text-gray);
-        }
-
-        /* Sections */
-        .section {
-            margin-bottom: 0.25in;
-        }
-
-        .section-title {
-            font-size: 16pt;
-            color: var(--dark-gray);
-            margin-bottom: 0.1in;
-            padding-bottom: 0.05in;
-            border-bottom: 1px solid var(--border-gray);
-        }
-
-        .section p {
-            color: var(--medium-gray);
-            margin-bottom: 0.1in;
-            text-align: justify;
-        }
-
-        .section strong {
-            color: var(--dark-gray);
-        }
-
-        .highlight {
-            color: var(--accent-warm);
-            font-weight: 500;
-        }
-
-        /* Two Column Layout */
-        .two-column {
-            display: flex;
-            gap: 0.3in;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        /* Features List */
-        .features-title {
-            font-size: 11pt;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--dark-gray);
-            margin-bottom: 0.1in;
-        }
-
-        .features-list {
-            list-style: none;
-            color: var(--medium-gray);
-            font-size: 10pt;
-        }
-
-        .features-list li {
-            padding: 0.03in 0;
-            padding-left: 0.15in;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-green);
-        }
-
-        /* Walkability */
-        .walk-times {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.05in 0.2in;
-            font-size: 10pt;
-        }
-
-        .walk-item {
-            display: flex;
-            align-items: baseline;
-            gap: 0.1in;
-        }
-
-        .walk-time {
-            font-weight: 600;
-            color: var(--stat-blue);
-            min-width: 25px;
-        }
-
-        /* Contact Box */
-        .contact-box {
-            background: var(--light-gray);
-            border-radius: 8px;
-            padding: 0.2in;
-            text-align: center;
-            margin-top: 0.2in;
-        }
-
-        .contact-box h3 {
-            font-size: 14pt;
-            margin-bottom: 0.1in;
-        }
-
-        .contact-names {
-            font-weight: 500;
-            font-size: 11pt;
-            margin-bottom: 0.05in;
-        }
-
-        .contact-info {
-            color: var(--medium-gray);
-            font-size: 10pt;
-        }
-
-        .contact-info a {
-            color: var(--dark-gray);
-            text-decoration: none;
-        }
-
-        /* Community Box */
-        .community-box {
-            background: linear-gradient(135deg, var(--primary-green), #5aa038);
-            color: white;
-            border-radius: 8px;
-            padding: 0.2in;
-            text-align: center;
-        }
-
-        .community-box h3 {
-            font-size: 13pt;
-            margin-bottom: 0.05in;
-        }
-
-        .community-box p {
-            color: rgba(255,255,255,0.9);
-            font-size: 10pt;
-            margin: 0;
-        }
-
-        /* Callout Box */
-        .callout-box {
-            background: linear-gradient(135deg, #f0f7ed, #e8f5e3);
-            border-left: 4px solid var(--primary-green);
-            border-radius: 0 6px 6px 0;
-            padding: 0.15in;
-            margin: 0.15in 0;
-        }
-
-        .callout-box strong {
-            color: var(--primary-green);
-            font-size: 11pt;
-        }
-
-        .callout-box p {
-            margin: 0.05in 0 0 0;
-            color: var(--medium-gray);
-            font-size: 9pt;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding-top: 0.15in;
-            border-top: 1px solid var(--border-gray);
-            margin-top: 0.2in;
-            font-size: 9pt;
-            color: var(--text-gray);
-        }
-
-        .footer strong {
-            color: var(--dark-gray);
-        }
-
-        /* Page 2 specific */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.1in;
-            margin-bottom: 0.2in;
-        }
-
-        .gallery-placeholder {
-            aspect-ratio: 4/3;
-            background: var(--light-gray);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 9pt;
-            color: var(--text-gray);
-        }
-
-        .gallery-placeholder.large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.1in;
-            margin-top: 0.15in;
-        }
-
-        .amenity-card {
-            background: var(--light-gray);
-            border-radius: 6px;
-            padding: 0.15in;
-            text-align: center;
-        }
-
-        .amenity-card h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 10pt;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 0.03in;
-        }
-
-        .amenity-card p {
-            font-size: 8pt;
-            color: var(--text-gray);
-            margin: 0;
-        }
-
-        .condo-fees-box {
-            background: var(--stat-blue);
-            color: white;
-            border-radius: 8px;
-            padding: 0.2in;
-            margin: 0.2in 0;
-        }
-
-        .condo-fees-box h3 {
-            font-size: 14pt;
-            margin-bottom: 0.1in;
-            text-align: center;
-        }
-
-        .fees-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.1in;
-            font-size: 10pt;
-        }
-
-        .fees-grid div {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .fees-grid .label {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .fees-grid .value {
-            font-weight: 500;
-        }
-
-        .includes-list {
-            margin-top: 0.1in;
-            padding-top: 0.1in;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            text-align: center;
-            font-size: 9pt;
-            color: rgba(255,255,255,0.9);
-        }
-
-        @media print {
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .page {
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>1-25 Treehouse Lane | Printable Brochure</title>
+        <meta
+            name="description"
+            content="Printable brochure for 1-25 Treehouse Lane, a 3-bedroom Passive House condo in Treehouse Village Ecohousing, Bridgewater, NS. $549,000."
+        />
+        <meta
+            name="keywords"
+            content="Treehouse Village Ecohousing, Bridgewater real estate, Nova Scotia condo, Passive House, cohousing, property brochure"
+        />
+        <meta name="author" content="Modern Living Cohousing" />
+        <link rel="canonical" href="https://liveattreehouse.ca/brochure.html" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://liveattreehouse.ca/brochure.html"
+        />
+        <meta
+            property="og:title"
+            content="1-25 Treehouse Lane | Printable Brochure"
+        />
+        <meta
+            property="og:description"
+            content="A 3-bedroom Passive House condo in Treehouse Village Ecohousing, Bridgewater, NS. $549,000."
+        />
+        <meta
+            property="og:image"
+            content="https://liveattreehouse.ca/images/12_Common_great-hall_1024by768.jpg"
+        />
+        <meta property="og:locale" content="en_CA" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="1-25 Treehouse Lane | Printable Brochure"
+        />
+        <meta
+            name="twitter:description"
+            content="A 3-bedroom Passive House condo in Treehouse Village Ecohousing, Bridgewater, NS. $549,000."
+        />
+        <meta
+            name="twitter:image"
+            content="https://liveattreehouse.ca/images/12_Common_great-hall_1024by768.jpg"
+        />
+
+        <script
+            async
+            src="https://analytics.novanexus.ca/js/pa-m2HtJYDUmhahz1T-yC3Xo.js"
+        ></script>
+        <script>
+            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+            plausible.init();
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            @page {
+                size: letter;
                 margin: 0;
-                padding: 0.4in;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- Page 1 -->
-    <div class="page">
-        <header class="header">
-            <h1>1-25 Treehouse Lane</h1>
-            <p class="subtitle">Bridgewater, Nova Scotia · Treehouse Village Ecohousing</p>
-            <p class="price">$549,000</p>
-        </header>
 
-        <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-value">3</div>
-                <div class="stat-label">Bedrooms</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">2</div>
-                <div class="stat-label">Bathrooms</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">1,269</div>
-                <div class="stat-label">Square Feet</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">16</div>
-                <div class="stat-label">Acres (Community)</div>
-            </div>
-        </div>
+            :root {
+                --ink: #18211d;
+                --forest: #1f4439;
+                --moss: #547d67;
+                --clay: #9c513d;
+                --sky: #dce8e4;
+                --paper: #fbf8f1;
+                --linen: #eee7da;
+                --white: #ffffff;
+                --muted: #5e6862;
+                --line: #d9d0bf;
+            }
 
-        <section class="section">
-            <h2 class="section-title">About the Property</h2>
-            <p>Nestled into the hillside, this move-in-ready, newly built (2024) <strong>3-bedroom, 2-bath condo</strong> offers comfort, connection, and a vibrant sense of play. As part of <strong>Treehouse Village Ecohousing, Atlantic Canada's first cohousing community</strong>, this home was built to the rigorous <strong>Passive House standard</strong>, keeping it naturally cool in summer and warm in winter.</p>
-            <p>The <strong>open floor plan</strong> has made this home ideal for our family of four—we've hosted countless kids' playdates, potlucks, and parties. <strong>Abundant natural light</strong> fills the space throughout the day, while the master bedroom offers peaceful nights with <strong>two exterior walls that share no neighbours</strong>. Located on the <strong>ground floor with full wheelchair accessibility</strong>, the kitchen and bathrooms are thoughtfully designed with mobility in mind.</p>
+            * {
+                box-sizing: border-box;
+            }
 
-            <div class="callout-box">
-                <strong>Over $5,600 in Quality Appliances Included</strong>
-                <p>Haier counter-depth 4-door refrigerator, GE Profile range, GE dishwasher, and Midea 24" washer & dryer—all included.</p>
+            body {
+                margin: 0;
+                color: var(--ink);
+                background: #dbe3df;
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+                font-size: 10.5pt;
+                line-height: 1.46;
+                letter-spacing: 0;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            h1,
+            h2,
+            h3,
+            p {
+                margin: 0;
+            }
+
+            h1,
+            h2,
+            h3 {
+                font-family: "Playfair Display", Georgia, serif;
+                line-height: 1.05;
+                letter-spacing: 0;
+            }
+
+            .page {
+                position: relative;
+                width: 8.5in;
+                min-height: 11in;
+                margin: 0.3in auto;
+                padding: 0.42in;
+                overflow: hidden;
+                background: var(--paper);
+                box-shadow: 0 14px 48px rgba(24, 33, 29, 0.18);
+                break-after: page;
+            }
+
+            .page:last-child {
+                break-after: auto;
+            }
+
+            .hero-photo {
+                height: 2.15in;
+                overflow: hidden;
+                border-radius: 8px;
+            }
+
+            .hero-photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .masthead {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 0.25in;
+                align-items: end;
+                margin-bottom: 0.24in;
+            }
+
+            .eyebrow {
+                margin-bottom: 0.08in;
+                color: var(--clay);
+                font-size: 8.8pt;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                font-size: 36pt;
+            }
+
+            .price {
+                padding: 0.15in 0.18in;
+                color: var(--white);
+                background: var(--forest);
+                border-radius: 8px;
+                font-size: 21pt;
+                font-weight: 800;
+                white-space: nowrap;
+            }
+
+            .subtitle {
+                margin-top: 0.08in;
+                color: var(--muted);
+                font-size: 11pt;
+                font-weight: 700;
+            }
+
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.08in;
+                margin: 0.18in 0 0.22in;
+            }
+
+            .stat {
+                padding: 0.12in;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+            }
+
+            .stat span {
+                display: block;
+                color: var(--muted);
+                font-size: 7.6pt;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+
+            .stat strong {
+                display: block;
+                margin-top: 0.02in;
+                color: var(--forest);
+                font-size: 13pt;
+                line-height: 1.1;
+            }
+
+            .two-col {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) 2.45in;
+                gap: 0.24in;
+            }
+
+            .lead {
+                color: var(--ink);
+                font-size: 14.5pt;
+                line-height: 1.28;
+            }
+
+            .copy p + p {
+                margin-top: 0.11in;
+            }
+
+            .muted {
+                color: var(--muted);
+            }
+
+            .panel {
+                padding: 0.16in;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                break-inside: avoid;
+            }
+
+            .panel h2,
+            .panel h3 {
+                margin-bottom: 0.11in;
+                color: var(--forest);
+                font-size: 17pt;
+            }
+
+            .info-list,
+            .check-list,
+            .walk-list {
+                display: grid;
+                gap: 0.065in;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .info-list li {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.12in;
+                padding-bottom: 0.06in;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .info-list li:last-child {
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+
+            .info-list span {
+                color: var(--muted);
+                font-weight: 700;
+            }
+
+            .info-list strong {
+                text-align: right;
+            }
+
+            .contact-strip {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 0.18in;
+                align-items: center;
+                margin-top: 0.24in;
+                padding: 0.17in;
+                color: var(--white);
+                background: var(--ink);
+                border-radius: 8px;
+            }
+
+            .contact-strip strong {
+                display: block;
+                font-size: 13pt;
+            }
+
+            .contact-strip span {
+                color: rgba(255, 255, 255, 0.74);
+            }
+
+            .contact-actions {
+                display: grid;
+                gap: 0.04in;
+                text-align: right;
+                font-weight: 800;
+            }
+
+            .section-title {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 0.18in;
+                align-items: end;
+                margin-bottom: 0.16in;
+                padding-bottom: 0.12in;
+                border-bottom: 2px solid var(--forest);
+            }
+
+            .section-title h2 {
+                font-size: 25pt;
+            }
+
+            .section-title p {
+                max-width: 2.3in;
+                color: var(--muted);
+                font-size: 9.5pt;
+            }
+
+            .grid-3 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.12in;
+            }
+
+            .check-list li {
+                position: relative;
+                padding-left: 0.17in;
+                color: var(--muted);
+            }
+
+            .check-list li::before {
+                position: absolute;
+                left: 0;
+                color: var(--moss);
+                font-weight: 900;
+                content: "+";
+            }
+
+            .floor-map {
+                display: grid;
+                grid-template-columns: 3.2in minmax(0, 1fr);
+                gap: 0.18in;
+                align-items: start;
+                margin: 0.18in 0;
+            }
+
+            .floor-image {
+                overflow: hidden;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+            }
+
+            .floor-image img {
+                width: 100%;
+                height: 4.18in;
+                object-fit: contain;
+            }
+
+            .walk-list li {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.08in;
+                padding-bottom: 0.055in;
+                color: var(--muted);
+                border-bottom: 1px solid var(--line);
+            }
+
+            .walk-list li:last-child {
+                border-bottom: 0;
+            }
+
+            .walk-list strong {
+                color: var(--forest);
+                white-space: nowrap;
+            }
+
+            .photo-strip {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.08in;
+                margin-top: 0.18in;
+            }
+
+            .photo-card {
+                overflow: hidden;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+            }
+
+            .photo-card img {
+                width: 100%;
+                height: 1.25in;
+                object-fit: cover;
+            }
+
+            .photo-card span {
+                display: block;
+                padding: 0.055in 0.07in;
+                color: var(--forest);
+                font-size: 7.8pt;
+                font-weight: 800;
+            }
+
+            .footer-note {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.2in;
+                margin-top: 0.06in;
+                color: var(--muted);
+                font-size: 8.6pt;
+            }
+
+            @media print {
+                body {
+                    font-size: 9.4pt;
+                    background: var(--white);
+                }
+
+                .page {
+                    width: auto;
+                    min-height: 11in;
+                    margin: 0;
+                    padding: 0.3in;
+                    box-shadow: none;
+                }
+
+                h1 {
+                    font-size: 30pt;
+                }
+
+                .price {
+                    padding: 0.12in 0.16in;
+                    font-size: 18pt;
+                }
+
+                .subtitle {
+                    font-size: 9.6pt;
+                }
+
+                .hero-photo {
+                    height: 1.62in;
+                }
+
+                .stats {
+                    gap: 0.06in;
+                    margin: 0.13in 0 0.15in;
+                }
+
+                .stat {
+                    padding: 0.08in;
+                }
+
+                .stat strong {
+                    font-size: 11.2pt;
+                }
+
+                .two-col {
+                    gap: 0.16in;
+                }
+
+                .lead {
+                    font-size: 12.2pt;
+                }
+
+                .copy p + p {
+                    margin-top: 0.08in;
+                }
+
+                .panel {
+                    padding: 0.1in;
+                }
+
+                .panel h2,
+                .panel h3 {
+                    margin-bottom: 0.07in;
+                    font-size: 13.6pt;
+                }
+
+                .grid-3 {
+                    gap: 0.08in;
+                }
+
+                .contact-strip {
+                    margin-top: 0.13in;
+                    padding: 0.11in;
+                }
+
+                .section-title {
+                    margin-bottom: 0.12in;
+                    padding-bottom: 0.08in;
+                }
+
+                .section-title h2 {
+                    font-size: 21pt;
+                }
+
+                .floor-map {
+                    grid-template-columns: 2.85in minmax(0, 1fr);
+                    gap: 0.12in;
+                    margin: 0.12in 0;
+                }
+
+                .floor-image img {
+                    height: 3.45in;
+                }
+
+                .photo-strip {
+                    gap: 0.06in;
+                    margin-top: 0.12in;
+                }
+
+                .photo-card img {
+                    height: 0.86in;
+                }
+
+                .photo-card span {
+                    padding: 0.04in 0.05in;
+                    font-size: 7pt;
+                }
+
+                .map-preview {
+                    display: none;
+                }
+
+                .footer-note {
+                    margin-top: 0.04in;
+                    font-size: 7.4pt;
+                }
+            }
+
+            @media screen and (max-width: 900px) {
+                .page {
+                    width: min(100%, 8.5in);
+                    min-height: auto;
+                    margin: 0 auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <article class="page">
+            <div class="masthead">
+                <div>
+                    <p class="eyebrow">For sale by owner</p>
+                    <h1>1-25 Treehouse Lane</h1>
+                    <p class="subtitle">
+                        Treehouse Village Ecohousing, Bridgewater, NS B4V 9H9
+                    </p>
+                </div>
+                <div class="price">$549,000</div>
             </div>
-        </section>
 
-        <div class="two-column">
-            <div class="column">
-                <section class="section">
-                    <h2 class="section-title">Home Features</h2>
-                    <ul class="features-list">
-                        <li>Passive House construction</li>
-                        <li>Heat Pump / Air Conditioning</li>
-                        <li>Solid Surface Countertops (Silver/White Sand)</li>
-                        <li>Revwood Premier Laminate Flooring</li>
-                        <li>Haier Counter-Depth 4-Door Refrigerator</li>
-                        <li>GE Profile Range (Stainless Steel)</li>
-                        <li>GE Dishwasher (Stainless Steel)</li>
-                        <li>Midea 24" Washer & Dryer (Platinum)</li>
-                        <li>8'8" Ceilings</li>
-                        <li>Ground floor wheelchair accessible</li>
+            <div class="hero-photo">
+                <img
+                    src="images/12_Common_great-hall_1024by768.jpg"
+                    alt="Treehouse Village community great hall"
+                />
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span>Home</span>
+                    <strong>3 bedrooms</strong>
+                </div>
+                <div class="stat">
+                    <span>Bathrooms</span>
+                    <strong>2 full</strong>
+                </div>
+                <div class="stat">
+                    <span>Size</span>
+                    <strong>1,269 sq. ft.</strong>
+                </div>
+                <div class="stat">
+                    <span>Built</span>
+                    <strong>2024</strong>
+                </div>
+            </div>
+
+            <div class="two-col">
+                <div class="copy">
+                    <p class="lead">
+                        A private, accessible Passive House condo with a whole
+                        village of shared spaces outside the door.
+                    </p>
+                    <p class="muted">
+                        This move-in-ready ground-floor home is part of
+                        Treehouse Village Ecohousing, Atlantic Canada's first
+                        cohousing community. The open living area, natural
+                        light, accessible kitchen and bathrooms, and quiet
+                        bedroom placement make the apartment comfortable for
+                        daily life.
+                    </p>
+                    <p class="muted">
+                        Condo fees include heat, electricity, water, internet,
+                        snow removal, and garbage. Shared amenities include the
+                        great hall, community kitchen, workshop, coworking
+                        lounge, gym, studio, guest rooms, gardens, forest
+                        trails, EV charging, and EV car sharing.
+                    </p>
+                </div>
+
+                <aside class="panel">
+                    <h2>Listing facts</h2>
+                    <ul class="info-list">
+                        <li><span>Address</span><strong>1-25 Treehouse Lane</strong></li>
+                        <li><span>Community</span><strong>Treehouse Village</strong></li>
+                        <li><span>Construction</span><strong>Passive House</strong></li>
+                        <li><span>Condo fee</span><strong>$477/month</strong></li>
+                        <li><span>Sewage</span><strong>~$500/year</strong></li>
+                        <li><span>Sale</span><strong>Owner-direct</strong></li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="grid-3" style="margin-top: 0.22in">
+                <section class="panel">
+                    <h3>Home</h3>
+                    <ul class="check-list">
+                        <li>Ground-floor wheelchair-accessible layout</li>
+                        <li>Open plan with abundant natural light</li>
+                        <li>Heat pump and air conditioning</li>
+                        <li>8 ft. 8 in. ceilings</li>
+                    </ul>
+                </section>
+                <section class="panel">
+                    <h3>Included</h3>
+                    <ul class="check-list">
+                        <li>Haier counter-depth refrigerator</li>
+                        <li>GE Profile stainless range</li>
+                        <li>GE stainless dishwasher</li>
+                        <li>Midea 24 in. washer and dryer</li>
+                    </ul>
+                </section>
+                <section class="panel">
+                    <h3>Community</h3>
+                    <ul class="check-list">
+                        <li>Dining hall and community kitchen</li>
+                        <li>Workshop, gym, studio, coworking</li>
+                        <li>Guest rooms, gardens, and forest</li>
+                        <li>Centennial Trail connection</li>
                     </ul>
                 </section>
             </div>
-            <div class="column">
-                <section class="section">
-                    <h2 class="section-title">Walkability</h2>
-                    <p style="font-size: 9pt; margin-bottom: 0.1in;">Minutes walking from Treehouse Village:</p>
-                    <div class="walk-times">
-                        <div class="walk-item"><span class="walk-time">9</span> Bus stop</div>
-                        <div class="walk-item"><span class="walk-time">11</span> NSCC / YMCA</div>
-                        <div class="walk-item"><span class="walk-time">12</span> Elementary school</div>
-                        <div class="walk-item"><span class="walk-time">14</span> Grocery, pharmacy</div>
-                        <div class="walk-item"><span class="walk-time">16</span> Day care</div>
-                        <div class="walk-item"><span class="walk-time">16</span> River shops</div>
-                        <div class="walk-item"><span class="walk-time">18</span> Pool, library, arena</div>
-                    </div>
-                </section>
-            </div>
-        </div>
 
-        <div class="community-box">
-            <h3>Atlantic Canada's First Cohousing Community</h3>
-            <p>Connected directly to the Centennial Trail · Near UNESCO World Heritage Lunenburg · 20+ beaches within 1 hour</p>
-        </div>
-
-        <div class="contact-box">
-            <h3>For Sale by Owner</h3>
-            <p class="contact-names">Emily Kashul & Bastian Gruber</p>
-            <p class="contact-info">
-                <a href="tel:+19022984382">+1-902-298-4382</a> · <a href="mailto:embastic@icloud.com">embastic@icloud.com</a>
-            </p>
-            <p style="margin-top: 0.1in; font-size: 9pt; color: var(--text-gray);">liveattreehouse.ca</p>
-        </div>
-
-        <footer class="footer">
-            <strong>Treehouse Village Ecohousing</strong> · 1-25 Treehouse Lane, Bridgewater, NS B4V 9H9 · liveattreehouse.ca
-        </footer>
-    </div>
-
-    <!-- Page 2 -->
-    <div class="page">
-        <header class="header" style="padding-bottom: 0.2in; margin-bottom: 0.2in;">
-            <h1 style="font-size: 24pt;">Community Amenities & Details</h1>
-            <p class="subtitle">Treehouse Village Ecohousing</p>
-        </header>
-
-        <section class="section">
-            <h2 class="section-title">Shared Community Amenities</h2>
-            <div class="amenities-grid">
-                <div class="amenity-card">
-                    <h4>Great Hall & Kitchen</h4>
-                    <p>Community dining and events</p>
+            <div class="contact-strip">
+                <div>
+                    <strong>Emily Kashul and Bastian Gruber</strong>
+                    <span>Owners. Text, call, or email to ask questions or arrange a showing.</span>
                 </div>
-                <div class="amenity-card">
-                    <h4>Workshop</h4>
-                    <p>Shared tools & workspace</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>Coworking Space</h4>
-                    <p>Quiet work environment</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>Community Gym</h4>
-                    <p>Fitness equipment</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>Guest Suites</h4>
-                    <p>Reservable for visitors</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>Studio Space</h4>
-                    <p>Creative & flex space</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>Gardens</h4>
-                    <p>Community growing space</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>Forest Trails</h4>
-                    <p>16 acres of nature</p>
-                </div>
-                <div class="amenity-card">
-                    <h4>EV Charging</h4>
-                    <p>Electric vehicle stations</p>
+                <div class="contact-actions">
+                    <a href="tel:+19022984382">+1-902-298-4382</a>
+                    <a href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane">embastic@icloud.com</a>
                 </div>
             </div>
-        </section>
 
-        <div class="condo-fees-box">
-            <h3>Monthly Condo Fees: $477</h3>
-            <div class="fees-grid">
-                <div><span class="label">Heat</span> <span class="value">Included</span></div>
-                <div><span class="label">Electricity</span> <span class="value">Included</span></div>
-                <div><span class="label">Water</span> <span class="value">Included</span></div>
-                <div><span class="label">Internet</span> <span class="value">Included</span></div>
-                <div><span class="label">Snow Removal</span> <span class="value">Included</span></div>
-                <div><span class="label">Garbage</span> <span class="value">Included</span></div>
+            <div class="footer-note">
+                <span>liveattreehouse.ca</span>
+                <span>Apartment photos coming soon. Shared-space photos shown.</span>
             </div>
-            <p class="includes-list">Sewage: ~$500/year (separate) · Access to all shared amenities</p>
-        </div>
+        </article>
 
-        <div class="two-column">
-            <div class="column">
-                <section class="section">
-                    <h2 class="section-title">Community Features</h2>
-                    <ul class="features-list">
-                        <li>Intergenerational cohousing</li>
-                        <li>Passive House construction</li>
-                        <li>Solar panels on-site</li>
-                        <li>EV car sharing program</li>
-                        <li>Car-free garden courtyard</li>
-                        <li>Treehouse (in progress)</li>
-                        <li>Zipline for kids</li>
-                        <li>Connected to Centennial Trail</li>
+        <article class="page">
+            <div class="section-title">
+                <h2>Layout, location, and shared spaces</h2>
+                <p>
+                    A practical apartment plan plus cohousing amenities for
+                    hosting, working, making, and gathering.
+                </p>
+            </div>
+
+            <div class="floor-map">
+                <div class="floor-image">
+                    <img
+                        src="images/floorplan.png"
+                        alt="Floor plan for 1-25 Treehouse Lane"
+                    />
+                </div>
+                <div class="panel">
+                    <h3>Walkable Bridgewater</h3>
+                    <ul class="walk-list">
+                        <li><span>Bus stop</span><strong>9 min</strong></li>
+                        <li><span>NSCC / YMCA</span><strong>11 min</strong></li>
+                        <li><span>Elementary school</span><strong>12 min</strong></li>
+                        <li><span>Grocery, post office, pharmacy</span><strong>14 min</strong></li>
+                        <li><span>Day care</span><strong>16 min</strong></li>
+                        <li><span>River restaurants and shops</span><strong>16 min</strong></li>
+                        <li><span>Pool, library, skate park, arena</span><strong>18 min</strong></li>
                     </ul>
+                    <p class="muted" style="margin-top: 0.12in">
+                        The 16-acre property connects directly to the Centennial
+                        Trail, with South Shore beaches and Lunenburg County
+                        destinations close by.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <section class="panel">
+                    <h3>Low-energy comfort</h3>
+                    <p class="muted">
+                        Passive House construction helps keep the home warm in
+                        winter, cool in summer, and quiet year-round.
+                    </p>
+                </section>
+                <section class="panel">
+                    <h3>Flexible timing</h3>
+                    <p class="muted">
+                        The sellers are open to discussing a rental agreement
+                        for a buyer planning a future move.
+                    </p>
+                </section>
+                <section class="panel">
+                    <h3>Owner contact</h3>
+                    <p class="muted">
+                        Call or text +1-902-298-4382, or email
+                        embastic@icloud.com with questions.
+                    </p>
                 </section>
             </div>
-            <div class="column">
-                <section class="section">
-                    <h2 class="section-title">South Shore Living</h2>
-                    <ul class="features-list">
-                        <li>UNESCO World Heritage Lunenburg</li>
-                        <li>Home of the Bluenose II</li>
-                        <li>20+ white-sand beaches nearby</li>
-                        <li>125+ km of connected trails</li>
-                        <li>Regional hospital in town</li>
-                        <li>Schools in English & French</li>
-                        <li>Waldorf school option</li>
-                        <li>Community college nearby</li>
-                    </ul>
-                </section>
+
+            <div class="photo-strip">
+                <figure class="photo-card">
+                    <img
+                        src="images/13_Common_kitchen_1024by768.jpg"
+                        alt="Community kitchen"
+                    />
+                    <span>Community kitchen</span>
+                </figure>
+                <figure class="photo-card">
+                    <img
+                        src="images/15_Common_workshop_1024by768.jpg"
+                        alt="Community workshop"
+                    />
+                    <span>Workshop</span>
+                </figure>
+                <figure class="photo-card">
+                    <img
+                        src="images/17_Common_lounge-coworking_1024by768.jpg"
+                        alt="Lounge and coworking space"
+                    />
+                    <span>Lounge and coworking</span>
+                </figure>
+                <figure class="photo-card">
+                    <img
+                        src="images/21_Common_forest_768by1024.jpg"
+                        alt="Forest trail"
+                    />
+                    <span>Forest trails</span>
+                </figure>
             </div>
-        </div>
 
-        <section class="section">
-            <h2 class="section-title">Investment Flexibility</h2>
-            <p></p><span class="highlight">The sellers are open to negotiate a rent agreement</span> if you want to purchase this property as a future home or current investment. Whether you're ready to move in today or planning for retirement in 5-10 years, flexible arrangements are available.</p>
-        </section>
+            <div
+                class="hero-photo map-preview"
+                style="height: 2.05in; margin-top: 0.18in"
+            >
+                <img
+                    src="images/walkability-map.jpeg"
+                    alt="Walkability map for Treehouse Village"
+                />
+            </div>
 
-        <div class="contact-box">
-            <h3>Schedule a Visit</h3>
-            <p class="contact-names">Emily Kashul & Bastian Gruber</p>
-            <p class="contact-info">
-                <a href="tel:+19022984382">+1-902-298-4382</a> (text or call)<br>
-                <a href="mailto:embastic@icloud.com">embastic@icloud.com</a>
-            </p>
-            <p style="margin-top: 0.1in; font-size: 9pt; color: var(--text-gray);">liveattreehouse.ca</p>
-        </div>
+            <div class="contact-strip" style="margin-top: 0.18in">
+                <div>
+                    <strong>1-25 Treehouse Lane, Bridgewater, NS B4V 9H9</strong>
+                    <span>Treehouse Village Ecohousing. Offered for sale by owner at $549,000.</span>
+                </div>
+                <div class="contact-actions">
+                    <a href="https://liveattreehouse.ca/">liveattreehouse.ca</a>
+                    <a href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane">Email the owners</a>
+                </div>
+            </div>
 
-        <footer class="footer">
-            <strong>Treehouse Village Ecohousing</strong> · 1-25 Treehouse Lane, Bridgewater, NS B4V 9H9 · liveattreehouse.ca<br>
-            <span style="font-size: 8pt;">Atlantic Canada's first cohousing community · Built to Passive House standard</span>
-        </footer>
-    </div>
-</body>
+            <div class="footer-note">
+                <span>Treehouse Village Ecohousing</span>
+                <span>Shared-space photos shown. Apartment photos coming soon.</span>
+            </div>
+        </article>
+    </body>
 </html>
