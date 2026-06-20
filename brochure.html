@@ -17,14 +17,8 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
         <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="https://liveattreehouse.ca/brochure.html"
-        />
-        <meta
-            property="og:title"
-            content="1-25 Treehouse Lane | Printable Brochure"
-        />
+        <meta property="og:url" content="https://liveattreehouse.ca/brochure.html" />
+        <meta property="og:title" content="1-25 Treehouse Lane | Printable Brochure" />
         <meta
             property="og:description"
             content="A 3-bedroom Passive House condo in Treehouse Village Ecohousing, Bridgewater, NS. $549,000."
@@ -36,10 +30,7 @@
         <meta property="og:locale" content="en_CA" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="1-25 Treehouse Lane | Printable Brochure"
-        />
+        <meta name="twitter:title" content="1-25 Treehouse Lane | Printable Brochure" />
         <meta
             name="twitter:description"
             content="A 3-bedroom Passive House condo in Treehouse Village Ecohousing, Bridgewater, NS. $549,000."
@@ -61,7 +52,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
         />
 
@@ -72,35 +63,30 @@
             }
 
             :root {
-                --ink: #18211d;
-                --forest: #1f4439;
-                --moss: #547d67;
-                --clay: #9c513d;
-                --sky: #dce8e4;
-                --paper: #fbf8f1;
-                --linen: #eee7da;
-                --white: #ffffff;
-                --muted: #5e6862;
-                --line: #d9d0bf;
+                --indigo-900: #16183a;
+                --indigo-800: #212451;
+                --indigo-700: #2a2e63;
+                --peach: #f3c4a4;
+                --peach-strong: #f0ad84;
+                --cream: #f6efbf;
+                --text: #e8e9f4;
+                --text-soft: #aab0d6;
+                --line: rgba(255, 255, 255, 0.12);
             }
 
             * {
                 box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             body {
                 margin: 0;
-                color: var(--ink);
-                background: #dbe3df;
-                font-family:
-                    "Inter",
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    sans-serif;
+                color: var(--text);
+                background: #0f1130;
+                font-family: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
                 font-size: 10.5pt;
-                line-height: 1.46;
-                letter-spacing: 0;
+                line-height: 1.5;
             }
 
             img {
@@ -113,19 +99,16 @@
                 text-decoration: none;
             }
 
-            h1,
-            h2,
-            h3,
-            p {
+            h1, h2, h3, p {
                 margin: 0;
             }
 
-            h1,
-            h2,
-            h3 {
-                font-family: "Playfair Display", Georgia, serif;
-                line-height: 1.05;
-                letter-spacing: 0;
+            .display {
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                line-height: 0.95;
+                letter-spacing: 0.01em;
             }
 
             .page {
@@ -133,10 +116,10 @@
                 width: 8.5in;
                 min-height: 11in;
                 margin: 0.3in auto;
-                padding: 0.42in;
+                padding: 0.5in;
                 overflow: hidden;
-                background: var(--paper);
-                box-shadow: 0 14px 48px rgba(24, 33, 29, 0.18);
+                background: var(--indigo-800);
+                box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
                 break-after: page;
             }
 
@@ -144,10 +127,55 @@
                 break-after: auto;
             }
 
+            .eyebrow {
+                margin-bottom: 0.1in;
+                color: var(--peach);
+                font-size: 8.4pt;
+                font-weight: 700;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+            }
+
+            /* ---- Cover masthead ---- */
+            .masthead {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 0.25in;
+                align-items: end;
+                margin-bottom: 0.26in;
+            }
+
+            h1.display {
+                font-size: 44pt;
+                color: var(--peach);
+            }
+
+            h1.display em {
+                font-style: normal;
+                color: var(--cream);
+            }
+
+            .subtitle {
+                margin-top: 0.1in;
+                color: var(--text-soft);
+                font-size: 10.5pt;
+                font-weight: 600;
+            }
+
+            .price {
+                padding: 0.16in 0.2in;
+                color: var(--indigo-900);
+                background: var(--peach);
+                border-radius: 12px;
+                font-family: "Anton", sans-serif;
+                font-size: 22pt;
+                white-space: nowrap;
+            }
+
             .hero-photo {
-                height: 2.15in;
+                height: 2.25in;
                 overflow: hidden;
-                border-radius: 8px;
+                border-radius: 14px;
             }
 
             .hero-photo img {
@@ -156,113 +184,78 @@
                 object-fit: cover;
             }
 
-            .masthead {
-                display: grid;
-                grid-template-columns: minmax(0, 1fr) auto;
-                gap: 0.25in;
-                align-items: end;
-                margin-bottom: 0.24in;
-            }
-
-            .eyebrow {
-                margin-bottom: 0.08in;
-                color: var(--clay);
-                font-size: 8.8pt;
-                font-weight: 800;
-                text-transform: uppercase;
-            }
-
-            h1 {
-                font-size: 36pt;
-            }
-
-            .price {
-                padding: 0.15in 0.18in;
-                color: var(--white);
-                background: var(--forest);
-                border-radius: 8px;
-                font-size: 21pt;
-                font-weight: 800;
-                white-space: nowrap;
-            }
-
-            .subtitle {
-                margin-top: 0.08in;
-                color: var(--muted);
-                font-size: 11pt;
-                font-weight: 700;
-            }
-
             .stats {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 0.08in;
-                margin: 0.18in 0 0.22in;
+                gap: 0.1in;
+                margin: 0.2in 0;
             }
 
             .stat {
-                padding: 0.12in;
-                background: var(--white);
+                padding: 0.14in;
+                background: var(--indigo-700);
                 border: 1px solid var(--line);
-                border-radius: 8px;
+                border-radius: 12px;
             }
 
             .stat span {
                 display: block;
-                color: var(--muted);
-                font-size: 7.6pt;
-                font-weight: 800;
+                color: var(--text-soft);
+                font-size: 7.4pt;
+                font-weight: 700;
+                letter-spacing: 0.12em;
                 text-transform: uppercase;
             }
 
             .stat strong {
                 display: block;
-                margin-top: 0.02in;
-                color: var(--forest);
-                font-size: 13pt;
-                line-height: 1.1;
+                margin-top: 0.04in;
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                color: var(--cream);
+                font-size: 15pt;
+                line-height: 1.05;
             }
 
             .two-col {
                 display: grid;
-                grid-template-columns: minmax(0, 1fr) 2.45in;
-                gap: 0.24in;
+                grid-template-columns: minmax(0, 1fr) 2.55in;
+                gap: 0.26in;
             }
 
             .lead {
-                color: var(--ink);
-                font-size: 14.5pt;
-                line-height: 1.28;
+                color: var(--text);
+                font-size: 14pt;
+                font-weight: 600;
+                line-height: 1.3;
             }
 
             .copy p + p {
-                margin-top: 0.11in;
-            }
-
-            .muted {
-                color: var(--muted);
+                margin-top: 0.12in;
+                color: var(--text-soft);
             }
 
             .panel {
-                padding: 0.16in;
-                background: var(--white);
+                padding: 0.18in;
+                background: var(--indigo-700);
                 border: 1px solid var(--line);
-                border-radius: 8px;
+                border-radius: 14px;
                 break-inside: avoid;
             }
 
             .panel h2,
             .panel h3 {
-                margin-bottom: 0.11in;
-                color: var(--forest);
-                font-size: 17pt;
+                margin-bottom: 0.12in;
+                color: var(--peach);
+                font-size: 14pt;
+                font-weight: 800;
             }
 
             .info-list,
             .check-list,
             .walk-list {
                 display: grid;
-                gap: 0.065in;
+                gap: 0.07in;
                 margin: 0;
                 padding: 0;
                 list-style: none;
@@ -272,7 +265,7 @@
                 display: flex;
                 justify-content: space-between;
                 gap: 0.12in;
-                padding-bottom: 0.06in;
+                padding-bottom: 0.07in;
                 border-bottom: 1px solid var(--line);
             }
 
@@ -282,12 +275,12 @@
             }
 
             .info-list span {
-                color: var(--muted);
-                font-weight: 700;
+                color: var(--text-soft);
             }
 
             .info-list strong {
                 text-align: right;
+                color: var(--text);
             }
 
             .contact-strip {
@@ -295,25 +288,26 @@
                 grid-template-columns: minmax(0, 1fr) auto;
                 gap: 0.18in;
                 align-items: center;
-                margin-top: 0.24in;
-                padding: 0.17in;
-                color: var(--white);
-                background: var(--ink);
-                border-radius: 8px;
+                margin-top: 0.26in;
+                padding: 0.2in;
+                color: var(--indigo-900);
+                background: var(--peach);
+                border-radius: 14px;
             }
 
             .contact-strip strong {
                 display: block;
                 font-size: 13pt;
+                font-weight: 800;
             }
 
             .contact-strip span {
-                color: rgba(255, 255, 255, 0.74);
+                color: rgba(22, 24, 58, 0.78);
             }
 
             .contact-actions {
                 display: grid;
-                gap: 0.04in;
+                gap: 0.05in;
                 text-align: right;
                 font-weight: 800;
             }
@@ -323,59 +317,59 @@
                 grid-template-columns: minmax(0, 1fr) auto;
                 gap: 0.18in;
                 align-items: end;
-                margin-bottom: 0.16in;
-                padding-bottom: 0.12in;
-                border-bottom: 2px solid var(--forest);
+                margin-bottom: 0.2in;
+                padding-bottom: 0.13in;
+                border-bottom: 2px solid var(--peach);
             }
 
             .section-title h2 {
-                font-size: 25pt;
+                font-size: 22pt;
+                color: var(--peach);
             }
 
             .section-title p {
-                max-width: 2.3in;
-                color: var(--muted);
+                max-width: 2.4in;
+                color: var(--text-soft);
                 font-size: 9.5pt;
             }
 
             .grid-3 {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 0.12in;
+                gap: 0.14in;
             }
 
             .check-list li {
                 position: relative;
-                padding-left: 0.17in;
-                color: var(--muted);
+                padding-left: 0.18in;
+                color: var(--text-soft);
             }
 
             .check-list li::before {
                 position: absolute;
                 left: 0;
-                color: var(--moss);
-                font-weight: 900;
+                color: var(--peach);
+                font-weight: 800;
                 content: "+";
             }
 
             .floor-map {
                 display: grid;
                 grid-template-columns: 3.2in minmax(0, 1fr);
-                gap: 0.18in;
+                gap: 0.2in;
                 align-items: start;
-                margin: 0.18in 0;
+                margin: 0.2in 0;
             }
 
             .floor-image {
                 overflow: hidden;
-                background: var(--white);
-                border: 1px solid var(--line);
-                border-radius: 8px;
+                background: #fff;
+                border-radius: 12px;
             }
 
             .floor-image img {
                 width: 100%;
-                height: 4.18in;
+                height: 4.15in;
                 object-fit: contain;
             }
 
@@ -383,8 +377,8 @@
                 display: flex;
                 justify-content: space-between;
                 gap: 0.08in;
-                padding-bottom: 0.055in;
-                color: var(--muted);
+                padding-bottom: 0.06in;
+                color: var(--text-soft);
                 border-bottom: 1px solid var(--line);
             }
 
@@ -393,162 +387,102 @@
             }
 
             .walk-list strong {
-                color: var(--forest);
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                color: var(--peach);
                 white-space: nowrap;
             }
 
             .photo-strip {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 0.08in;
-                margin-top: 0.18in;
+                gap: 0.1in;
+                margin-top: 0.2in;
             }
 
             .photo-card {
                 overflow: hidden;
-                background: var(--white);
+                background: var(--indigo-700);
                 border: 1px solid var(--line);
-                border-radius: 8px;
+                border-radius: 12px;
             }
 
             .photo-card img {
                 width: 100%;
-                height: 1.25in;
+                height: 1.3in;
                 object-fit: cover;
             }
 
             .photo-card span {
                 display: block;
-                padding: 0.055in 0.07in;
-                color: var(--forest);
+                padding: 0.06in 0.08in;
+                color: var(--cream);
                 font-size: 7.8pt;
-                font-weight: 800;
+                font-weight: 700;
             }
 
             .footer-note {
                 display: flex;
                 justify-content: space-between;
                 gap: 0.2in;
-                margin-top: 0.06in;
-                color: var(--muted);
-                font-size: 8.6pt;
+                margin-top: 0.12in;
+                color: var(--text-soft);
+                font-size: 8.4pt;
             }
 
             @media print {
                 body {
-                    font-size: 9.4pt;
-                    background: var(--white);
+                    font-size: 9.6pt;
+                    background: #fff;
                 }
 
                 .page {
                     width: auto;
                     min-height: 11in;
                     margin: 0;
-                    padding: 0.3in;
+                    padding: 0.4in;
                     box-shadow: none;
                 }
 
-                h1 {
-                    font-size: 30pt;
+                h1.display {
+                    font-size: 36pt;
                 }
 
                 .price {
-                    padding: 0.12in 0.16in;
-                    font-size: 18pt;
-                }
-
-                .subtitle {
-                    font-size: 9.6pt;
+                    font-size: 19pt;
                 }
 
                 .hero-photo {
-                    height: 1.62in;
+                    height: 1.7in;
                 }
 
                 .stats {
-                    gap: 0.06in;
-                    margin: 0.13in 0 0.15in;
-                }
-
-                .stat {
-                    padding: 0.08in;
-                }
-
-                .stat strong {
-                    font-size: 11.2pt;
-                }
-
-                .two-col {
-                    gap: 0.16in;
+                    margin: 0.14in 0;
                 }
 
                 .lead {
-                    font-size: 12.2pt;
-                }
-
-                .copy p + p {
-                    margin-top: 0.08in;
-                }
-
-                .panel {
-                    padding: 0.1in;
-                }
-
-                .panel h2,
-                .panel h3 {
-                    margin-bottom: 0.07in;
-                    font-size: 13.6pt;
-                }
-
-                .grid-3 {
-                    gap: 0.08in;
-                }
-
-                .contact-strip {
-                    margin-top: 0.13in;
-                    padding: 0.11in;
-                }
-
-                .section-title {
-                    margin-bottom: 0.12in;
-                    padding-bottom: 0.08in;
+                    font-size: 12.5pt;
                 }
 
                 .section-title h2 {
-                    font-size: 21pt;
+                    font-size: 19pt;
                 }
 
                 .floor-map {
                     grid-template-columns: 2.85in minmax(0, 1fr);
-                    gap: 0.12in;
-                    margin: 0.12in 0;
+                    margin: 0.14in 0;
                 }
 
                 .floor-image img {
-                    height: 3.45in;
-                }
-
-                .photo-strip {
-                    gap: 0.06in;
-                    margin-top: 0.12in;
+                    height: 3.5in;
                 }
 
                 .photo-card img {
-                    height: 0.86in;
-                }
-
-                .photo-card span {
-                    padding: 0.04in 0.05in;
-                    font-size: 7pt;
+                    height: 0.95in;
                 }
 
                 .map-preview {
                     display: none;
-                }
-
-                .footer-note {
-                    margin-top: 0.04in;
-                    font-size: 7.4pt;
                 }
             }
 
@@ -557,6 +491,13 @@
                     width: min(100%, 8.5in);
                     min-height: auto;
                     margin: 0 auto;
+                    padding: 1.2rem;
+                }
+
+                .two-col,
+                .floor-map,
+                .grid-3 {
+                    grid-template-columns: 1fr;
                 }
             }
         </style>
@@ -566,7 +507,9 @@
             <div class="masthead">
                 <div>
                     <p class="eyebrow">For sale by owner</p>
-                    <h1>1-25 Treehouse Lane</h1>
+                    <h1 class="display">
+                        1&ndash;25<br /><em>Treehouse Lane</em>
+                    </h1>
                     <p class="subtitle">
                         Treehouse Village Ecohousing, Bridgewater, NS B4V 9H9
                     </p>
@@ -584,15 +527,15 @@
             <div class="stats">
                 <div class="stat">
                     <span>Home</span>
-                    <strong>3 bedrooms</strong>
+                    <strong>3 Bed</strong>
                 </div>
                 <div class="stat">
-                    <span>Bathrooms</span>
-                    <strong>2 full</strong>
+                    <span>Bath</span>
+                    <strong>2 Full</strong>
                 </div>
                 <div class="stat">
-                    <span>Size</span>
-                    <strong>1,269 sq. ft.</strong>
+                    <span>Floor area</span>
+                    <strong>1,269 ft&sup2;</strong>
                 </div>
                 <div class="stat">
                     <span>Built</span>
@@ -606,32 +549,31 @@
                         A private, accessible Passive House condo with a whole
                         village of shared spaces outside the door.
                     </p>
-                    <p class="muted">
+                    <p>
                         This move-in-ready ground-floor home is part of
                         Treehouse Village Ecohousing, Atlantic Canada's first
                         cohousing community. The open living area, natural
                         light, accessible kitchen and bathrooms, and quiet
-                        bedroom placement make the apartment comfortable for
-                        daily life.
+                        bedroom placement make it comfortable for daily life.
                     </p>
-                    <p class="muted">
-                        Condo fees include heat, electricity, water, internet,
-                        snow removal, and garbage. Shared amenities include the
-                        great hall, community kitchen, workshop, coworking
-                        lounge, gym, studio, guest rooms, gardens, forest
-                        trails, EV charging, and EV car sharing.
+                    <p>
+                        The monthly condo fee covers heat, electricity, water,
+                        internet, snow removal, and garbage. Shared amenities
+                        include the great hall, community kitchen, workshop,
+                        coworking lounge, gym, studio, guest rooms, gardens,
+                        forest trails, EV charging, and EV car sharing.
                     </p>
                 </div>
 
                 <aside class="panel">
                     <h2>Listing facts</h2>
                     <ul class="info-list">
-                        <li><span>Address</span><strong>1-25 Treehouse Lane</strong></li>
+                        <li><span>Address</span><strong>1&ndash;25 Treehouse Lane</strong></li>
                         <li><span>Community</span><strong>Treehouse Village</strong></li>
                         <li><span>Construction</span><strong>Passive House</strong></li>
                         <li><span>Condo fee</span><strong>$477/month</strong></li>
                         <li><span>Sewage</span><strong>~$500/year</strong></li>
-                        <li><span>Sale</span><strong>Owner-direct</strong></li>
+                        <li><span>Sale</span><strong>Owner direct</strong></li>
                     </ul>
                 </aside>
             </div>
@@ -640,27 +582,27 @@
                 <section class="panel">
                     <h3>Home</h3>
                     <ul class="check-list">
-                        <li>Ground-floor wheelchair-accessible layout</li>
-                        <li>Open plan with abundant natural light</li>
+                        <li>Ground-floor, wheelchair-accessible</li>
+                        <li>Open plan, abundant light</li>
                         <li>Heat pump and air conditioning</li>
-                        <li>8 ft. 8 in. ceilings</li>
+                        <li>8 ft 8 in ceilings</li>
                     </ul>
                 </section>
                 <section class="panel">
                     <h3>Included</h3>
                     <ul class="check-list">
-                        <li>Haier counter-depth refrigerator</li>
+                        <li>Haier counter-depth fridge</li>
                         <li>GE Profile stainless range</li>
                         <li>GE stainless dishwasher</li>
-                        <li>Midea 24 in. washer and dryer</li>
+                        <li>Midea 24 in washer/dryer</li>
                     </ul>
                 </section>
                 <section class="panel">
                     <h3>Community</h3>
                     <ul class="check-list">
-                        <li>Dining hall and community kitchen</li>
+                        <li>Dining hall and kitchen</li>
                         <li>Workshop, gym, studio, coworking</li>
-                        <li>Guest rooms, gardens, and forest</li>
+                        <li>Guest rooms, gardens, forest</li>
                         <li>Centennial Trail connection</li>
                     </ul>
                 </section>
@@ -668,11 +610,11 @@
 
             <div class="contact-strip">
                 <div>
-                    <strong>Emily Kashul and Bastian Gruber</strong>
+                    <strong>Emily Kashul &amp; Bastian Gruber</strong>
                     <span>Owners. Text, call, or email to ask questions or arrange a showing.</span>
                 </div>
                 <div class="contact-actions">
-                    <a href="tel:+19022984382">+1-902-298-4382</a>
+                    <a href="tel:+19022984382">+1 902 298 4382</a>
                     <a href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane">embastic@icloud.com</a>
                 </div>
             </div>
@@ -685,7 +627,7 @@
 
         <article class="page">
             <div class="section-title">
-                <h2>Layout, location, and shared spaces</h2>
+                <h2>Layout, location &amp; shared spaces</h2>
                 <p>
                     A practical apartment plan plus cohousing amenities for
                     hosting, working, making, and gathering.
@@ -710,10 +652,10 @@
                         <li><span>River restaurants and shops</span><strong>16 min</strong></li>
                         <li><span>Pool, library, skate park, arena</span><strong>18 min</strong></li>
                     </ul>
-                    <p class="muted" style="margin-top: 0.12in">
+                    <p style="margin-top: 0.14in; color: var(--text-soft)">
                         The 16-acre property connects directly to the Centennial
                         Trail, with South Shore beaches and Lunenburg County
-                        destinations close by.
+                        close by.
                     </p>
                 </div>
             </div>
@@ -721,22 +663,22 @@
             <div class="grid-3">
                 <section class="panel">
                     <h3>Low-energy comfort</h3>
-                    <p class="muted">
-                        Passive House construction helps keep the home warm in
-                        winter, cool in summer, and quiet year-round.
+                    <p style="color: var(--text-soft)">
+                        Passive House construction keeps the home warm in winter,
+                        cool in summer, and quiet year-round.
                     </p>
                 </section>
                 <section class="panel">
                     <h3>Flexible timing</h3>
-                    <p class="muted">
-                        The sellers are open to discussing a rental agreement
-                        for a buyer planning a future move.
+                    <p style="color: var(--text-soft)">
+                        The owners are open to discussing a rental agreement for
+                        a buyer planning a future move.
                     </p>
                 </section>
                 <section class="panel">
                     <h3>Owner contact</h3>
-                    <p class="muted">
-                        Call or text +1-902-298-4382, or email
+                    <p style="color: var(--text-soft)">
+                        Call or text +1 902 298 4382, or email
                         embastic@icloud.com with questions.
                     </p>
                 </section>
@@ -744,49 +686,34 @@
 
             <div class="photo-strip">
                 <figure class="photo-card">
-                    <img
-                        src="images/13_Common_kitchen_1024by768.jpg"
-                        alt="Community kitchen"
-                    />
+                    <img src="images/13_Common_kitchen_1024by768.jpg" alt="Community kitchen" />
                     <span>Community kitchen</span>
                 </figure>
                 <figure class="photo-card">
-                    <img
-                        src="images/15_Common_workshop_1024by768.jpg"
-                        alt="Community workshop"
-                    />
+                    <img src="images/15_Common_workshop_1024by768.jpg" alt="Community workshop" />
                     <span>Workshop</span>
                 </figure>
                 <figure class="photo-card">
-                    <img
-                        src="images/17_Common_lounge-coworking_1024by768.jpg"
-                        alt="Lounge and coworking space"
-                    />
-                    <span>Lounge and coworking</span>
+                    <img src="images/17_Common_lounge-coworking_1024by768.jpg" alt="Lounge and coworking space" />
+                    <span>Lounge &amp; coworking</span>
                 </figure>
                 <figure class="photo-card">
-                    <img
-                        src="images/21_Common_forest_768by1024.jpg"
-                        alt="Forest trail"
-                    />
+                    <img src="images/21_Common_forest_768by1024.jpg" alt="Forest trail" />
                     <span>Forest trails</span>
                 </figure>
             </div>
 
-            <div
-                class="hero-photo map-preview"
-                style="height: 2.05in; margin-top: 0.18in"
-            >
+            <div class="hero-photo map-preview" style="height: 2.05in; margin-top: 0.2in">
                 <img
                     src="images/walkability-map.jpeg"
                     alt="Walkability map for Treehouse Village"
                 />
             </div>
 
-            <div class="contact-strip" style="margin-top: 0.18in">
+            <div class="contact-strip" style="margin-top: 0.2in">
                 <div>
-                    <strong>1-25 Treehouse Lane, Bridgewater, NS B4V 9H9</strong>
-                    <span>Treehouse Village Ecohousing. Offered for sale by owner at $549,000.</span>
+                    <strong>1&ndash;25 Treehouse Lane, Bridgewater, NS B4V 9H9</strong>
+                    <span>Treehouse Village Ecohousing. For sale by owner at $549,000.</span>
                 </div>
                 <div class="contact-actions">
                     <a href="https://liveattreehouse.ca/">liveattreehouse.ca</a>

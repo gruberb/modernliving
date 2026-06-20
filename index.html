@@ -51,6 +51,7 @@
         />
 
         <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#212451" />
         <meta name="geo.region" content="CA-NS" />
         <meta name="geo.placename" content="Bridgewater" />
         <meta name="geo.position" content="44.377;-64.518" />
@@ -117,23 +118,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
         />
 
         <style>
             :root {
-                --ink: #18211d;
-                --forest: #1f4439;
-                --moss: #547d67;
-                --clay: #9c513d;
-                --sky: #dce8e4;
-                --paper: #fbf8f1;
-                --linen: #eee7da;
-                --white: #ffffff;
-                --muted: #5e6862;
-                --line: #d9d0bf;
-                --shadow: 0 18px 44px rgba(24, 33, 29, 0.1);
+                --indigo-900: #16183a;
+                --indigo-800: #212451;
+                --indigo-700: #2a2e63;
+                --indigo-600: #3a3f86;
+                --peach: #f3c4a4;
+                --peach-strong: #f0ad84;
+                --cream: #f6efbf;
+                --text: #e8e9f4;
+                --text-soft: #aab0d6;
+                --line: rgba(243, 196, 164, 0.18);
+                --line-soft: rgba(255, 255, 255, 0.1);
+                --maxw: 1180px;
+                --shadow: 0 32px 70px rgba(8, 10, 32, 0.5);
+                --radius: 22px;
             }
 
             * {
@@ -146,17 +150,17 @@
 
             body {
                 margin: 0;
-                color: var(--ink);
-                background: var(--paper);
+                color: var(--text);
+                background: var(--indigo-800);
                 font-family:
-                    "Inter",
+                    "Hanken Grotesk",
                     -apple-system,
                     BlinkMacSystemFont,
                     "Segoe UI",
                     sans-serif;
-                font-size: 16px;
-                line-height: 1.62;
-                letter-spacing: 0;
+                font-size: 17px;
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
                 text-rendering: optimizeLegibility;
             }
 
@@ -178,50 +182,160 @@
             input,
             textarea {
                 font: inherit;
-                letter-spacing: 0;
             }
 
             button {
                 cursor: pointer;
             }
 
+            ::selection {
+                color: var(--indigo-900);
+                background: var(--peach);
+            }
+
+            :focus-visible {
+                outline: 3px solid var(--peach);
+                outline-offset: 3px;
+                border-radius: 4px;
+            }
+
             .skip-link {
                 position: absolute;
                 left: 1rem;
-                top: -4rem;
+                top: -5rem;
                 z-index: 1000;
-                padding: 0.75rem 1rem;
-                color: var(--white);
-                background: var(--forest);
-                border-radius: 4px;
+                padding: 0.75rem 1.1rem;
+                color: var(--indigo-900);
+                background: var(--peach);
+                border-radius: 999px;
+                font-weight: 700;
             }
 
             .skip-link:focus {
                 top: 1rem;
             }
 
+            .wrap {
+                width: min(var(--maxw), calc(100% - 2.5rem));
+                margin: 0 auto;
+            }
+
+            /* ---------- Type ---------- */
+            .display {
+                margin: 0;
+                font-family: "Anton", "Hanken Grotesk", sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                line-height: 0.92;
+                letter-spacing: 0.01em;
+            }
+
+            h2,
+            h3 {
+                margin: 0;
+                font-family: "Hanken Grotesk", sans-serif;
+                line-height: 1.05;
+                letter-spacing: -0.015em;
+            }
+
+            .eyebrow {
+                margin: 0 0 1.1rem;
+                color: var(--peach);
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+            }
+
+            .head {
+                font-size: clamp(1.9rem, 3.6vw, 3rem);
+                font-weight: 800;
+                color: var(--peach);
+            }
+
+            .lead {
+                font-size: clamp(1.25rem, 2vw, 1.6rem);
+                font-weight: 500;
+                line-height: 1.4;
+                color: var(--text);
+            }
+
+            .muted {
+                color: var(--text-soft);
+            }
+
+            /* ---------- Buttons ---------- */
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                min-height: 3rem;
+                padding: 0.85rem 1.5rem;
+                border: 1.5px solid transparent;
+                border-radius: 999px;
+                font-size: 0.96rem;
+                font-weight: 700;
+                line-height: 1;
+                transition:
+                    transform 160ms ease,
+                    background 160ms ease,
+                    border-color 160ms ease,
+                    color 160ms ease;
+            }
+
+            .btn:hover,
+            .btn:focus-visible {
+                transform: translateY(-2px);
+            }
+
+            .btn-primary {
+                color: var(--indigo-900);
+                background: var(--peach);
+            }
+
+            .btn-primary:hover,
+            .btn-primary:focus-visible {
+                background: var(--peach-strong);
+            }
+
+            .btn-outline {
+                color: var(--peach);
+                border-color: rgba(243, 196, 164, 0.45);
+            }
+
+            .btn-outline:hover,
+            .btn-outline:focus-visible {
+                border-color: var(--peach);
+                background: rgba(243, 196, 164, 0.08);
+            }
+
+            .btn-ghost {
+                color: var(--text-soft);
+                padding-left: 0.6rem;
+                padding-right: 0.6rem;
+            }
+
+            .btn-ghost:hover,
+            .btn-ghost:focus-visible {
+                color: var(--peach);
+            }
+
+            /* ---------- Header ---------- */
             .site-header {
                 position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
+                inset: 0 0 auto;
                 z-index: 50;
-                color: var(--white);
-                background: linear-gradient(
-                    to bottom,
-                    rgba(24, 33, 29, 0.64),
-                    rgba(24, 33, 29, 0)
-                );
                 transition:
-                    background 180ms ease,
-                    color 180ms ease,
-                    box-shadow 180ms ease;
+                    background 220ms ease,
+                    border-color 220ms ease,
+                    backdrop-filter 220ms ease;
+                border-bottom: 1px solid transparent;
             }
 
             .site-header.is-scrolled {
-                color: var(--ink);
-                background: rgba(251, 248, 241, 0.96);
-                box-shadow: 0 8px 28px rgba(24, 33, 29, 0.06);
+                background: rgba(22, 24, 58, 0.82);
+                border-bottom-color: var(--line-soft);
                 backdrop-filter: blur(16px);
             }
 
@@ -230,48 +344,62 @@
                 grid-template-columns: auto 1fr auto;
                 align-items: center;
                 gap: 1.5rem;
-                width: min(1180px, calc(100% - 2rem));
+                width: min(var(--maxw), calc(100% - 2.5rem));
                 margin: 0 auto;
-                padding: 1rem 0;
+                padding: 1.1rem 0;
             }
 
             .brand {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+            }
+
+            .brand .mark {
                 display: grid;
-                gap: 0.1rem;
-                min-width: 10rem;
+                place-items: center;
+                width: 2.3rem;
+                height: 2.3rem;
+                color: var(--indigo-900);
+                background: var(--peach);
+                border-radius: 9px;
+                font-family: "Anton", sans-serif;
+                font-size: 1.15rem;
+                letter-spacing: -0.02em;
             }
 
-            .brand strong {
-                font-family: "Playfair Display", Georgia, serif;
-                font-size: 1.12rem;
+            .brand-text strong {
+                display: block;
+                font-size: 1rem;
+                font-weight: 800;
                 line-height: 1.1;
+                letter-spacing: -0.01em;
             }
 
-            .brand span {
-                color: currentColor;
-                font-size: 0.78rem;
-                opacity: 0.78;
+            .brand-text span {
+                font-size: 0.74rem;
+                color: var(--text-soft);
             }
 
             .nav-links {
                 display: flex;
                 justify-content: center;
-                gap: 1.35rem;
+                gap: 1.6rem;
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                color: currentColor;
-                font-size: 0.9rem;
+                font-size: 0.92rem;
                 font-weight: 600;
             }
 
             .nav-links a {
-                opacity: 0.86;
+                color: var(--text-soft);
+                transition: color 160ms ease;
             }
 
             .nav-links a:hover,
             .nav-links a:focus-visible {
-                opacity: 1;
+                color: var(--peach);
             }
 
             .header-actions {
@@ -280,254 +408,222 @@
                 gap: 0.6rem;
             }
 
-            .button {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                min-height: 2.9rem;
-                padding: 0.78rem 1.08rem;
-                border: 1px solid transparent;
-                border-radius: 5px;
-                font-size: 0.95rem;
-                font-weight: 700;
-                line-height: 1;
-                transition:
-                    transform 160ms ease,
-                    background 160ms ease,
-                    border-color 160ms ease;
-            }
-
-            .button:hover,
-            .button:focus-visible {
-                transform: translateY(-1px);
-            }
-
-            .button.primary {
-                color: var(--white);
-                background: var(--clay);
-                box-shadow: 0 8px 20px rgba(156, 81, 61, 0.18);
-            }
-
-            .button.primary:hover,
-            .button.primary:focus-visible {
-                background: #8f4735;
-            }
-
-            .button.secondary {
-                color: var(--ink);
-                background: rgba(255, 255, 255, 0.88);
-                border-color: rgba(24, 33, 29, 0.12);
-            }
-
-            .button.secondary:hover,
-            .button.secondary:focus-visible {
-                border-color: rgba(24, 33, 29, 0.3);
-            }
-
-            .site-header:not(.is-scrolled) .button.secondary {
-                color: var(--white);
-                background: rgba(255, 255, 255, 0.14);
-                border-color: rgba(255, 255, 255, 0.28);
-            }
-
+            /* ---------- Hero ---------- */
             .hero {
                 position: relative;
-                display: grid;
-                min-height: 86vh;
-                color: var(--white);
-                isolation: isolate;
+                padding: 9.5rem 0 4rem;
+                overflow: hidden;
             }
 
             .hero::before {
-                position: absolute;
-                inset: 0;
-                z-index: -2;
                 content: "";
-                background:
-                    linear-gradient(
-                        90deg,
-                        rgba(24, 33, 29, 0.78) 0%,
-                        rgba(24, 33, 29, 0.55) 42%,
-                        rgba(24, 33, 29, 0.14) 100%
-                    ),
-                    url("images/12_Common_great-hall_1024by768.jpg") center /
-                        cover;
-            }
-
-            .hero::after {
                 position: absolute;
-                inset: auto 0 0;
-                z-index: -1;
-                height: 28%;
-                content: "";
-                background: linear-gradient(
-                    to bottom,
-                    rgba(251, 248, 241, 0),
-                    var(--paper)
+                inset: -20% 30% auto -10%;
+                height: 70vh;
+                background: radial-gradient(
+                    circle at 30% 30%,
+                    rgba(243, 196, 164, 0.16),
+                    transparent 60%
                 );
+                pointer-events: none;
+                z-index: 0;
             }
 
-            .hero-inner {
-                display: grid;
-                align-content: center;
-                gap: 1.8rem;
-                width: min(1180px, calc(100% - 2rem));
-                margin: 0 auto;
-                padding: 8rem 0 4.5rem;
+            .hero .wrap {
+                position: relative;
+                z-index: 1;
             }
 
-            .eyebrow {
-                margin: 0 0 0.85rem;
-                color: var(--sky);
-                font-size: 0.86rem;
-                font-weight: 800;
-                text-transform: uppercase;
+            .hero-title {
+                font-size: clamp(3.1rem, 9.4vw, 7.6rem);
+                color: var(--peach);
+                max-width: 14ch;
             }
 
-            h1,
-            h2,
-            h3 {
-                margin: 0;
-                font-family: "Playfair Display", Georgia, serif;
-                line-height: 1.02;
-                letter-spacing: 0;
+            .hero-title em {
+                font-style: normal;
+                color: var(--cream);
             }
 
-            h1 {
-                max-width: 760px;
-                font-size: 6.8rem;
-            }
-
-            h2 {
-                font-size: 4.1rem;
-            }
-
-            h3 {
-                font-size: 1.7rem;
-            }
-
-            .hero-copy {
-                max-width: 680px;
-            }
-
-            .hero-copy p {
-                margin: 1.05rem 0 0;
-                color: rgba(255, 255, 255, 0.84);
-                font-size: 1.22rem;
-                line-height: 1.55;
+            .hero-sub {
+                max-width: 46ch;
+                margin: 1.8rem 0 0;
+                font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+                color: var(--text);
             }
 
             .hero-actions {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.75rem;
+                margin-top: 2.2rem;
             }
 
-            .fact-strip {
+            .hero-gallery {
                 display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
+                margin-top: 3.5rem;
+            }
+
+            .shot {
+                position: relative;
+                margin: 0;
                 overflow: hidden;
-                width: min(1180px, calc(100% - 2rem));
-                margin: -2.8rem auto 0;
-                background: rgba(255, 255, 255, 0.96);
-                border: 1px solid rgba(24, 33, 29, 0.08);
-                border-radius: 8px;
+                border-radius: var(--radius);
+                background: var(--indigo-700);
                 box-shadow: var(--shadow);
             }
 
-            .fact {
-                padding: 1.25rem;
-                border-right: 1px solid var(--line);
+            .shot img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
             }
 
-            .fact:last-child {
-                border-right: 0;
+            .shot:hover img {
+                transform: scale(1.04);
+            }
+
+            .hero-gallery .shot {
+                aspect-ratio: 5 / 4;
+            }
+
+            .shot-tag {
+                position: absolute;
+                left: 0.9rem;
+                bottom: 0.9rem;
+                padding: 0.4rem 0.8rem;
+                color: var(--indigo-900);
+                background: rgba(246, 239, 191, 0.92);
+                border-radius: 999px;
+                font-size: 0.74rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+            }
+
+            .expand {
+                position: absolute;
+                top: 0.85rem;
+                right: 0.85rem;
+                display: grid;
+                place-items: center;
+                width: 2.6rem;
+                height: 2.6rem;
+                color: var(--cream);
+                background: rgba(22, 24, 58, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                border-radius: 999px;
+                backdrop-filter: blur(6px);
+                transition: background 160ms ease;
+            }
+
+            .shot:hover .expand,
+            .block-media:hover .expand,
+            .gallery-card:hover .expand {
+                background: rgba(243, 196, 164, 0.9);
+                color: var(--indigo-900);
+            }
+
+            .expand svg {
+                width: 1.1rem;
+                height: 1.1rem;
+            }
+
+            /* ---------- Facts ---------- */
+            .facts {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-end;
+                gap: 1.4rem 2.4rem;
+                margin-top: 3rem;
+                padding: 1.8rem 0 0;
+                border-top: 1px solid var(--line);
             }
 
             .fact span {
                 display: block;
-                color: var(--muted);
-                font-size: 0.82rem;
+                margin-bottom: 0.3rem;
+                color: var(--text-soft);
+                font-size: 0.72rem;
                 font-weight: 700;
+                letter-spacing: 0.16em;
                 text-transform: uppercase;
             }
 
             .fact strong {
-                display: block;
-                margin-top: 0.15rem;
-                color: var(--ink);
-                font-size: 1.42rem;
-                line-height: 1.15;
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+                line-height: 1;
+                color: var(--cream);
             }
 
-            main {
-                position: relative;
-                z-index: 1;
+            .fact.accent strong {
+                color: var(--peach);
             }
 
+            /* ---------- Sections ---------- */
             .section {
-                width: min(1180px, calc(100% - 2rem));
-                margin: 0 auto;
-                padding: 6.25rem 0;
+                padding: 6rem 0;
             }
 
-            .section.tight {
-                padding-top: 4.25rem;
+            .chapter-eyebrow {
+                color: var(--peach);
+                font-size: 0.82rem;
+                font-weight: 700;
+                letter-spacing: 0.24em;
+                text-transform: uppercase;
             }
 
-            .section-heading {
-                display: grid;
-                grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.9fr);
-                gap: 3.5rem;
-                align-items: end;
-                margin-bottom: 3.25rem;
-                padding-top: 1.1rem;
-                border-top: 1px solid rgba(217, 208, 191, 0.72);
-            }
-
-            .section-heading p {
-                margin: 0;
-                color: var(--muted);
-                font-size: 1.1rem;
-                line-height: 1.72;
+            .chapter-word {
+                margin: 0.4rem 0 2.8rem;
+                font-size: clamp(3rem, 11vw, 8.5rem);
+                color: var(--cream);
+                letter-spacing: 0.005em;
             }
 
             .intro-grid {
                 display: grid;
-                grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+                grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr);
                 gap: 3.5rem;
                 align-items: start;
             }
 
-            .lead {
-                margin: 0 0 1.3rem;
-                color: var(--ink);
-                font-size: 1.78rem;
-                line-height: 1.34;
-            }
-
             .prose p {
                 margin: 0 0 1.2rem;
-                color: var(--muted);
-                font-size: 1.05rem;
+                color: var(--text-soft);
+                font-size: 1.08rem;
+            }
+
+            .prose p.lead {
+                margin-bottom: 1.6rem;
+                color: var(--text);
             }
 
             .detail-panel {
-                display: grid;
-                gap: 1rem;
-                padding: 1.25rem;
-                background: rgba(255, 255, 255, 0.82);
-                border: 1px solid var(--line);
-                border-radius: 8px;
-                box-shadow: 0 12px 32px rgba(24, 33, 29, 0.06);
+                padding: 1.6rem 1.7rem;
+                background: var(--indigo-700);
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
+            }
+
+            .detail-panel h3 {
+                margin-bottom: 1.1rem;
+                font-size: 0.78rem;
+                font-weight: 700;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--peach);
             }
 
             .detail-row {
                 display: flex;
                 justify-content: space-between;
                 gap: 1rem;
-                padding-bottom: 0.9rem;
-                border-bottom: 1px solid var(--line);
+                padding: 0.85rem 0;
+                border-bottom: 1px solid var(--line-soft);
             }
 
             .detail-row:last-child {
@@ -536,159 +632,319 @@
             }
 
             .detail-row span {
-                color: var(--muted);
-                font-weight: 700;
+                color: var(--text-soft);
             }
 
             .detail-row strong {
                 text-align: right;
+                color: var(--text);
             }
 
-            .highlight-band {
-                background: linear-gradient(135deg, #18382f, var(--forest));
-                color: var(--white);
-            }
-
-            .highlight-band .section {
-                padding-top: 4.75rem;
-                padding-bottom: 4.75rem;
-            }
-
-            .highlight-grid {
+            /* ---------- Editorial blocks ---------- */
+            .block {
                 display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 1px;
+                grid-template-columns: 1fr 1fr;
+                gap: clamp(2rem, 5vw, 4.5rem);
+                align-items: center;
+            }
+
+            .block + .block {
+                margin-top: 5rem;
+            }
+
+            .block.flip .block-media {
+                order: 2;
+            }
+
+            .block-media {
+                position: relative;
                 overflow: hidden;
-                background: rgba(255, 255, 255, 0.18);
-                border-radius: 8px;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
             }
 
-            .highlight {
+            .block-media img {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+            }
+
+            .block-media:hover img {
+                transform: scale(1.04);
+            }
+
+            .block-body h3 {
+                font-size: clamp(1.6rem, 3vw, 2.4rem);
+                font-weight: 800;
+                color: var(--peach);
+            }
+
+            .block-body p {
+                margin: 1.1rem 0 0;
+                color: var(--text-soft);
+                font-size: 1.08rem;
+            }
+
+            /* ---------- Statement ---------- */
+            .statement {
+                padding: 7rem 0;
+                text-align: center;
+            }
+
+            .statement .display {
+                font-size: clamp(2.4rem, 6.4vw, 5.4rem);
+                color: var(--cream);
+                max-width: 18ch;
+                margin: 0 auto;
+            }
+
+            .statement p {
+                max-width: 52ch;
+                margin: 1.8rem auto 0;
+                color: var(--text-soft);
+                font-size: 1.1rem;
+            }
+
+            /* ---------- Placeholders ---------- */
+            .section-head {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+                gap: 2.5rem;
+                align-items: end;
+                margin-bottom: 2.8rem;
+            }
+
+            .section-head .muted {
+                font-size: 1.05rem;
+            }
+
+            .ph-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem;
+            }
+
+            .ph-card {
+                display: grid;
+                align-content: space-between;
+                gap: 2.5rem;
                 min-height: 13rem;
-                padding: 1.55rem;
-                background: rgba(255, 255, 255, 0.08);
+                padding: 1.4rem;
+                background: linear-gradient(
+                    160deg,
+                    var(--indigo-700),
+                    var(--indigo-800)
+                );
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
             }
 
-            .highlight span {
-                display: block;
-                margin-bottom: 1rem;
-                color: var(--sky);
-                font-size: 0.82rem;
-                font-weight: 800;
+            .ph-card .tag {
+                justify-self: start;
+                padding: 0.35rem 0.75rem;
+                color: var(--cream);
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                font-size: 0.68rem;
+                font-weight: 700;
+                letter-spacing: 0.16em;
                 text-transform: uppercase;
             }
 
-            .highlight p {
-                margin: 0.8rem 0 0;
-                color: rgba(255, 255, 255, 0.82);
+            .ph-card strong {
+                font-size: 1.35rem;
+                font-weight: 700;
+                color: var(--text);
             }
 
-            .placeholder-grid {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 1rem;
-            }
-
-            .placeholder-photo {
-                display: grid;
-                align-content: end;
-                min-height: 15rem;
-                padding: 1rem;
-                color: var(--ink);
-                background:
-                    linear-gradient(
-                        135deg,
-                        rgba(216, 228, 226, 0.7),
-                        rgba(241, 237, 228, 0.92)
-                    ),
-                    repeating-linear-gradient(
-                        45deg,
-                        rgba(33, 72, 61, 0.08) 0,
-                        rgba(33, 72, 61, 0.08) 2px,
-                        transparent 2px,
-                        transparent 14px
-                    );
-                border: 1px dashed rgba(33, 72, 61, 0.36);
-                border-radius: 8px;
-            }
-
-            .placeholder-photo span {
-                color: var(--muted);
-                font-size: 0.82rem;
-                font-weight: 800;
-                text-transform: uppercase;
-            }
-
-            .placeholder-photo strong {
-                margin-top: 0.2rem;
-                font-size: 1.15rem;
-            }
-
+            /* ---------- Gallery ---------- */
             .gallery-grid {
                 display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: 1.15rem;
-                align-items: start;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.2rem;
             }
 
             .gallery-card {
-                display: grid;
-                grid-template-rows: auto auto;
-                overflow: hidden;
+                position: relative;
+                display: block;
+                width: 100%;
                 padding: 0;
-                color: var(--ink);
-                background: var(--white);
-                border: 1px solid var(--line);
-                border-radius: 8px;
+                overflow: hidden;
+                background: var(--indigo-700);
+                border: 0;
+                border-radius: var(--radius);
                 text-align: left;
-                box-shadow: 0 10px 24px rgba(24, 33, 29, 0.045);
-                transition:
-                    border-color 160ms ease,
-                    box-shadow 160ms ease,
-                    transform 160ms ease;
+                box-shadow: var(--shadow);
+            }
+
+            .gallery-card:not(.featured) {
+                aspect-ratio: 4 / 3;
             }
 
             .gallery-card.featured {
                 grid-column: span 2;
+                grid-row: span 2;
             }
 
             .gallery-card img {
                 width: 100%;
-                aspect-ratio: 4 / 3;
+                height: 100%;
                 object-fit: cover;
+                transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
             }
 
-            .gallery-card.featured img {
-                aspect-ratio: 16 / 9;
+            .gallery-card:hover img,
+            .gallery-card:focus-visible img {
+                transform: scale(1.05);
             }
 
-            .gallery-card:hover,
-            .gallery-card:focus-visible {
-                border-color: rgba(33, 72, 61, 0.35);
-                box-shadow: 0 16px 34px rgba(24, 33, 29, 0.1);
-                transform: translateY(-1px);
+            .gallery-card .shot-tag {
+                pointer-events: none;
             }
 
-            .gallery-card span {
-                display: block;
-                align-self: center;
-                padding: 0.8rem 0.9rem;
-                color: var(--forest);
-                font-weight: 800;
-            }
-
-            .split-media {
+            /* ---------- Features ---------- */
+            .feature-cols {
                 display: grid;
-                grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.65fr);
-                gap: 2.75rem;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem;
+            }
+
+            .feature-block {
+                padding: 1.8rem;
+                background: var(--indigo-700);
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
+            }
+
+            .feature-block h3 {
+                margin-bottom: 1.2rem;
+                font-size: 1.35rem;
+                font-weight: 800;
+                color: var(--peach);
+            }
+
+            .check-list {
+                display: grid;
+                gap: 0.75rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .check-list li {
+                position: relative;
+                padding-left: 1.5rem;
+                color: var(--text-soft);
+            }
+
+            .check-list li::before {
+                position: absolute;
+                left: 0;
+                top: 0.05rem;
+                color: var(--peach);
+                font-weight: 800;
+                content: "+";
+            }
+
+            /* ---------- Media ---------- */
+            .media-shell {
+                overflow: hidden;
+                background: var(--indigo-700);
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
+            }
+
+            .media-tabs {
+                display: flex;
+                gap: 0.5rem;
+                padding: 0.85rem;
+                border-bottom: 1px solid var(--line-soft);
+            }
+
+            .media-tab {
+                min-height: 2.6rem;
+                padding: 0.6rem 1.2rem;
+                color: var(--text-soft);
+                background: transparent;
+                border: 0;
+                border-radius: 999px;
+                font-weight: 700;
+                transition:
+                    background 160ms ease,
+                    color 160ms ease;
+            }
+
+            .media-tab[aria-selected="true"] {
+                color: var(--indigo-900);
+                background: var(--peach);
+            }
+
+            .media-panel {
+                display: none;
+            }
+
+            .media-panel.is-active {
+                display: block;
+            }
+
+            .video-card {
+                position: relative;
+                display: grid;
+                align-content: end;
+                gap: 0.5rem;
+                min-height: min(60vw, 32rem);
+                padding: 2.4rem;
+                color: var(--cream);
+            }
+
+            .video-card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background:
+                    linear-gradient(
+                        to top,
+                        rgba(16, 18, 44, 0.92),
+                        rgba(16, 18, 44, 0.2)
+                    ),
+                    url("images/12_Common_great-hall_1024by768.jpg") center /
+                        cover;
+            }
+
+            .video-card > * {
+                position: relative;
+            }
+
+            .video-card h3 {
+                font-size: 1.7rem;
+                font-weight: 800;
+                color: var(--cream);
+            }
+
+            .video-card p {
+                max-width: 38ch;
+                margin: 0;
+                color: rgba(232, 233, 244, 0.85);
+            }
+
+            .video-card .btn {
+                justify-self: start;
+                margin-top: 0.6rem;
+            }
+
+            .floorplan-panel {
+                display: grid;
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 2rem;
                 align-items: center;
+                padding: 1.6rem;
             }
 
             .floorplan-preview {
                 overflow: hidden;
-                background: var(--white);
-                border: 1px solid var(--line);
-                border-radius: 8px;
+                background: #fff;
+                border-radius: 14px;
             }
 
             .floorplan-preview button {
@@ -701,153 +957,58 @@
 
             .floorplan-preview img {
                 width: 100%;
-                height: auto;
             }
 
-            .feature-columns {
+            .floorplan-panel h3 {
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: var(--peach);
+            }
+
+            .floorplan-panel p {
+                margin: 1rem 0 0;
+                color: var(--text-soft);
+            }
+
+            /* ---------- Location ---------- */
+            .location-wrap {
                 display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 1.15rem;
+                grid-template-columns: minmax(260px, 0.6fr) minmax(0, 1fr);
+                gap: 2.8rem;
+                align-items: stretch;
             }
 
-            .feature-block {
-                padding: 1.35rem;
-                background: rgba(255, 255, 255, 0.82);
-                border: 1px solid var(--line);
-                border-radius: 8px;
-            }
-
-            .feature-block h3 {
-                margin-bottom: 1rem;
-                font-size: 1.4rem;
-            }
-
-            .check-list,
             .walk-list {
                 display: grid;
-                gap: 0.7rem;
-                margin: 0;
+                gap: 0;
+                margin: 1.6rem 0 0;
                 padding: 0;
                 list-style: none;
             }
 
-            .check-list li {
-                position: relative;
-                padding-left: 1.3rem;
-                color: var(--muted);
-            }
-
-            .check-list li::before {
-                position: absolute;
-                left: 0;
-                color: var(--moss);
-                font-weight: 900;
-                content: "+";
-            }
-
-            .media-shell {
-                overflow: hidden;
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid var(--line);
-                border-radius: 8px;
-                box-shadow: 0 12px 32px rgba(24, 33, 29, 0.06);
-            }
-
-            .media-tabs {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                padding: 0.75rem;
-                background: var(--linen);
-                border-bottom: 1px solid var(--line);
-            }
-
-            .media-tab {
-                min-height: 2.5rem;
-                padding: 0.65rem 1rem;
-                color: var(--forest);
-                background: transparent;
-                border: 1px solid transparent;
-                border-radius: 6px;
-                font-weight: 800;
-            }
-
-            .media-tab[aria-selected="true"] {
-                color: var(--white);
-                background: var(--forest);
-            }
-
-            .media-panel {
-                display: none;
-            }
-
-            .media-panel.is-active {
-                display: block;
-            }
-
-            .video-card {
-                display: grid;
-                align-content: end;
-                min-height: min(56vw, 34rem);
-                padding: 2rem;
-                color: var(--white);
-                background:
-                    linear-gradient(
-                        to top,
-                        rgba(24, 33, 29, 0.82),
-                        rgba(24, 33, 29, 0.16)
-                    ),
-                    url("images/12_Common_great-hall_1024by768.jpg") center /
-                        cover;
-            }
-
-            .video-card div {
-                max-width: 34rem;
-            }
-
-            .video-card p {
-                margin: 0.75rem 0 1rem;
-                color: rgba(255, 255, 255, 0.82);
-            }
-
-            .media-note {
-                display: grid;
-                place-items: center;
-                min-height: 22rem;
-                padding: 2rem;
-                color: var(--muted);
-                text-align: center;
-            }
-
-            .location-wrap {
-                display: grid;
-                grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
-                gap: 2.75rem;
-                align-items: stretch;
-            }
-
             .walk-list li {
                 display: flex;
-                align-items: center;
+                align-items: baseline;
                 justify-content: space-between;
                 gap: 1rem;
-                padding: 0.75rem 0;
-                color: var(--muted);
-                border-bottom: 1px solid var(--line);
+                padding: 0.95rem 0;
+                color: var(--text-soft);
+                border-bottom: 1px solid var(--line-soft);
             }
 
             .walk-list strong {
-                color: var(--forest);
-                font-size: 1.4rem;
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                font-size: 1.5rem;
                 line-height: 1;
+                color: var(--peach);
             }
 
             .map-frame {
                 overflow: hidden;
-                min-height: 100%;
-                background: var(--white);
-                border: 1px solid var(--line);
-                border-radius: 8px;
+                min-height: 22rem;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
             }
 
             .map-frame img {
@@ -856,88 +1017,112 @@
                 object-fit: cover;
             }
 
-            .contact-band {
-                background: var(--linen);
+            /* ---------- Contact ---------- */
+            .contact {
+                padding: 6rem 0 7rem;
             }
 
             .contact-grid {
                 display: grid;
-                grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.65fr);
+                grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
                 gap: 3.5rem;
                 align-items: center;
             }
 
             .owner-box {
-                display: grid;
-                gap: 1rem;
-                padding: 1.35rem;
-                background: rgba(255, 255, 255, 0.88);
-                border: 1px solid var(--line);
-                border-radius: 8px;
-                box-shadow: 0 12px 32px rgba(24, 33, 29, 0.06);
+                padding: 2rem;
+                background: var(--indigo-700);
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
             }
 
             .owner-names {
-                color: var(--forest);
-                font-size: 1.4rem;
+                font-size: 1.5rem;
                 font-weight: 800;
                 line-height: 1.25;
+                color: var(--cream);
+            }
+
+            .owner-role {
+                margin: 0.2rem 0 1.4rem;
+                color: var(--text-soft);
+                font-size: 0.95rem;
             }
 
             .owner-actions {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 0.7rem;
+                margin-bottom: 1.3rem;
             }
 
-            .contact-note {
-                margin: 0;
-                color: var(--muted);
+            .owner-line {
+                margin: 0.4rem 0 0;
+                color: var(--text-soft);
                 font-size: 0.95rem;
             }
 
+            .owner-line a {
+                color: var(--peach);
+                font-weight: 600;
+            }
+
+            .owner-box .btn-outline {
+                width: 100%;
+                margin-top: 1.3rem;
+            }
+
+            /* ---------- Footer ---------- */
             footer {
-                padding: 2rem 1rem 5.5rem;
-                color: rgba(255, 255, 255, 0.76);
-                background: var(--ink);
-                text-align: center;
+                padding: 3rem 0 6rem;
+                background: var(--indigo-900);
+                border-top: 1px solid var(--line-soft);
             }
 
-            footer strong {
-                display: block;
-                color: var(--white);
+            .footer-inner {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 1rem;
+                color: var(--text-soft);
+                font-size: 0.92rem;
             }
 
+            .footer-inner strong {
+                color: var(--text);
+            }
+
+            /* ---------- Mobile contact bar ---------- */
             .mobile-contact {
                 position: fixed;
-                right: 0;
-                bottom: 0;
-                left: 0;
+                inset: auto 0 0;
                 z-index: 60;
                 display: none;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 0.45rem;
-                padding: 0.55rem;
-                background: rgba(251, 248, 241, 0.96);
-                border-top: 1px solid var(--line);
-                box-shadow: 0 -12px 30px rgba(24, 33, 29, 0.1);
+                gap: 0.5rem;
+                padding: 0.6rem;
+                background: rgba(22, 24, 58, 0.94);
+                border-top: 1px solid var(--line-soft);
                 backdrop-filter: blur(14px);
             }
 
-            .mobile-contact .button {
-                min-height: 2.75rem;
-                padding: 0.7rem 0.35rem;
+            .mobile-contact .btn {
+                min-height: 2.8rem;
+                padding: 0.7rem 0.4rem;
                 font-size: 0.88rem;
             }
 
+            /* ---------- Lightbox ---------- */
             .lightbox {
                 position: fixed;
                 inset: 0;
                 z-index: 100;
                 display: none;
                 place-items: center;
-                padding: 1rem;
-                background: rgba(10, 14, 12, 0.94);
+                padding: 1.5rem;
+                background: rgba(11, 12, 32, 0.95);
+                backdrop-filter: blur(6px);
             }
 
             .lightbox.is-open {
@@ -946,10 +1131,9 @@
 
             .lightbox-figure {
                 display: grid;
-                gap: 0.8rem;
+                gap: 0.9rem;
                 width: min(1100px, 100%);
                 margin: 0;
-                color: var(--white);
                 text-align: center;
             }
 
@@ -957,55 +1141,67 @@
                 width: 100%;
                 max-height: 82vh;
                 object-fit: contain;
+                border-radius: 12px;
+            }
+
+            .lightbox figcaption {
+                color: var(--cream);
+                font-weight: 600;
+                letter-spacing: 0.02em;
             }
 
             .lightbox button {
                 position: absolute;
                 display: grid;
                 place-items: center;
-                width: 3rem;
-                height: 3rem;
-                color: var(--white);
-                background: rgba(255, 255, 255, 0.12);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                width: 3.1rem;
+                height: 3.1rem;
+                color: var(--cream);
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.25);
                 border-radius: 999px;
+                font-size: 1.2rem;
             }
 
             .lightbox button:hover,
             .lightbox button:focus-visible {
-                background: rgba(255, 255, 255, 0.22);
+                background: rgba(243, 196, 164, 0.85);
+                color: var(--indigo-900);
             }
 
             .lightbox-close {
-                top: 1rem;
-                right: 1rem;
+                top: 1.2rem;
+                right: 1.2rem;
             }
 
             .lightbox-prev {
                 top: 50%;
-                left: 1rem;
+                left: 1.2rem;
                 transform: translateY(-50%);
             }
 
             .lightbox-next {
                 top: 50%;
-                right: 1rem;
+                right: 1.2rem;
                 transform: translateY(-50%);
             }
 
+            /* ---------- Reveal motion ---------- */
+            .reveal {
+                opacity: 0;
+                transform: translateY(22px);
+                transition:
+                    opacity 700ms ease,
+                    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+            }
+
+            .reveal.in {
+                opacity: 1;
+                transform: none;
+            }
+
+            /* ---------- Responsive ---------- */
             @media (max-width: 980px) {
-                h1 {
-                    font-size: 5rem;
-                }
-
-                h2 {
-                    font-size: 3.25rem;
-                }
-
-                h3 {
-                    font-size: 1.55rem;
-                }
-
                 .nav-shell {
                     grid-template-columns: 1fr auto;
                 }
@@ -1014,56 +1210,45 @@
                     display: none;
                 }
 
-                .section-heading,
                 .intro-grid,
-                .split-media,
+                .block,
                 .location-wrap,
-                .contact-grid {
+                .contact-grid,
+                .section-head,
+                .floorplan-panel {
                     grid-template-columns: 1fr;
                     gap: 2rem;
                 }
 
-                .section {
-                    padding: 5rem 0;
+                .block.flip .block-media {
+                    order: 0;
                 }
 
-                .section-heading {
-                    margin-bottom: 2.5rem;
-                }
-
-                .fact-strip,
-                .highlight-grid,
-                .feature-columns {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                .feature-cols,
+                .ph-grid {
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 .gallery-grid {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .gallery-card.featured {
+                    grid-column: span 2;
+                    grid-row: auto;
+                    aspect-ratio: 16 / 9;
                 }
             }
 
-            @media (max-width: 720px) {
+            @media (max-width: 680px) {
                 body {
-                    padding-bottom: 4.2rem;
+                    padding-bottom: 4.4rem;
                 }
 
                 .site-header {
-                    color: var(--ink);
-                    background: rgba(251, 248, 241, 0.96);
-                    box-shadow: 0 8px 28px rgba(24, 33, 29, 0.06);
-                    backdrop-filter: blur(16px);
-                }
-
-                .nav-shell {
-                    padding: 0.75rem 0;
-                }
-
-                .brand strong {
-                    font-size: 1rem;
-                }
-
-                .brand span {
-                    font-size: 0.72rem;
+                    background: rgba(22, 24, 58, 0.9);
+                    border-bottom-color: var(--line-soft);
+                    backdrop-filter: blur(14px);
                 }
 
                 .header-actions {
@@ -1071,92 +1256,37 @@
                 }
 
                 .hero {
-                    min-height: 82vh;
-                }
-
-                .hero::before {
-                    background:
-                        linear-gradient(
-                            to bottom,
-                            rgba(24, 33, 29, 0.42),
-                            rgba(24, 33, 29, 0.86)
-                        ),
-                        url("images/12_Common_great-hall_1024by768.jpg")
-                            center / cover;
-                }
-
-                .hero-inner {
-                    padding-top: 7rem;
-                    padding-bottom: 3.5rem;
-                }
-
-                h1 {
-                    font-size: 3.3rem;
-                }
-
-                h2 {
-                    font-size: 2.45rem;
-                }
-
-                h3 {
-                    font-size: 1.35rem;
-                }
-
-                .hero-copy p {
-                    font-size: 1.08rem;
-                    line-height: 1.55;
-                }
-
-                .section {
-                    padding: 4.25rem 0;
-                }
-
-                .section.tight {
-                    padding-top: 3.25rem;
-                }
-
-                .section-heading {
-                    gap: 1rem;
-                    margin-bottom: 2rem;
-                    padding-top: 0.9rem;
-                }
-
-                .section-heading p,
-                .prose p {
-                    font-size: 1rem;
-                }
-
-                .lead {
-                    font-size: 1.34rem;
+                    padding-top: 7.5rem;
                 }
 
                 .hero-actions {
-                    display: none;
+                    flex-direction: column;
+                    align-items: stretch;
                 }
 
-                .fact-strip,
-                .highlight-grid,
-                .placeholder-grid,
-                .feature-columns,
+                .hero-actions .btn {
+                    width: 100%;
+                }
+
+                .hero-gallery,
+                .feature-cols,
+                .ph-grid,
+                .gallery-grid,
                 .owner-actions {
-                    grid-template-columns: 1fr;
-                }
-
-                .fact {
-                    border-right: 0;
-                    border-bottom: 1px solid var(--line);
-                }
-
-                .fact:last-child {
-                    border-bottom: 0;
-                }
-
-                .gallery-grid {
                     grid-template-columns: 1fr;
                 }
 
                 .gallery-card.featured {
                     grid-column: span 1;
+                    aspect-ratio: 4 / 3;
+                }
+
+                .section {
+                    padding: 4.5rem 0;
+                }
+
+                .statement {
+                    padding: 4.5rem 0;
                 }
 
                 .mobile-contact {
@@ -1172,6 +1302,11 @@
                     transition-duration: 0.01ms !important;
                     animation-duration: 0.01ms !important;
                 }
+
+                .reveal {
+                    opacity: 1;
+                    transform: none;
+                }
             }
         </style>
     </head>
@@ -1181,561 +1316,638 @@
         <header class="site-header" id="site-header">
             <nav class="nav-shell" aria-label="Primary navigation">
                 <a class="brand" href="#top" aria-label="1-25 Treehouse Lane">
-                    <strong>1-25 Treehouse Lane</strong>
-                    <span>Treehouse Village Ecohousing</span>
+                    <span class="mark" aria-hidden="true">TL</span>
+                    <span class="brand-text">
+                        <strong>1&ndash;25 Treehouse Lane</strong>
+                        <span>Treehouse Village Ecohousing</span>
+                    </span>
                 </a>
 
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home">The home</a></li>
+                    <li><a href="#community">The village</a></li>
                     <li><a href="#photos">Photos</a></li>
-                    <li><a href="#community">Community</a></li>
-                    <li><a href="#media">Media</a></li>
+                    <li><a href="#features">Included</a></li>
                     <li><a href="#location">Location</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
                 <div class="header-actions">
                     <a
-                        class="button secondary"
+                        class="btn btn-outline"
                         href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane"
                         >Email</a
                     >
-                    <a class="button primary" href="tel:+19022984382"
-                        >Call/text</a
+                    <a class="btn btn-primary" href="tel:+19022984382"
+                        >Call / text</a
                     >
                 </div>
             </nav>
         </header>
 
         <section class="hero" id="top" aria-label="Property overview">
-            <div class="hero-inner">
-                <div class="hero-copy">
-                    <p class="eyebrow">For sale by owner in Bridgewater, NS</p>
-                    <h1>1-25 Treehouse Lane</h1>
-                    <p>
-                        A move-in-ready 3-bedroom Passive House condo in
-                        Treehouse Village Ecohousing, Atlantic Canada's first
-                        cohousing community.
-                    </p>
-                </div>
+            <div class="wrap">
+                <p class="eyebrow">
+                    For sale by owner &middot; Bridgewater, Nova Scotia
+                </p>
+                <h1 class="display hero-title">
+                    A home of your own,<br /><em>and a village to share.</em>
+                </h1>
+                <p class="hero-sub">
+                    1&ndash;25 Treehouse Lane is a move-in-ready,
+                    three-bedroom Passive House condo in Treehouse Village
+                    Ecohousing, Atlantic Canada's first cohousing community.
+                </p>
 
                 <div class="hero-actions">
-                    <a class="button primary" href="tel:+19022984382"
+                    <a class="btn btn-primary" href="tel:+19022984382"
                         >Call or text the owners</a
                     >
                     <a
-                        class="button secondary"
+                        class="btn btn-outline"
                         href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane"
-                        >Email Emily and Bastian</a
+                        >Email the owners</a
                     >
-                    <a class="button secondary" href="brochure.html"
-                        >View brochure</a
+                    <a class="btn btn-ghost" href="brochure.html"
+                        >View brochure &rarr;</a
                     >
                 </div>
-            </div>
-        </section>
 
-        <div class="fact-strip" aria-label="Listing facts">
-            <div class="fact">
-                <span>Price</span>
-                <strong>$549,000</strong>
-            </div>
-            <div class="fact">
-                <span>Home</span>
-                <strong>3 bed / 2 bath</strong>
-            </div>
-            <div class="fact">
-                <span>Size</span>
-                <strong>1,269 sq. ft.</strong>
-            </div>
-            <div class="fact">
-                <span>Location</span>
-                <strong>Bridgewater, NS</strong>
-            </div>
-        </div>
-
-        <main id="main">
-            <section class="section tight" id="home">
-                <div class="intro-grid">
-                    <div class="prose">
-                        <p class="lead">
-                            Living lightly, connected deeply, with a private
-                            home and a whole village of shared spaces.
-                        </p>
-                        <p>
-                            This newly built 2024 ground-floor condo is designed
-                            for everyday comfort: an open living area, abundant
-                            natural light, accessible kitchen and bathrooms, and
-                            peaceful bedrooms set within a car-free garden
-                            courtyard community.
-                        </p>
-                        <p>
-                            The home is part of Treehouse Village Ecohousing, a
-                            16-acre intergenerational community with shared
-                            dining, workshop, coworking, gym, guest rooms,
-                            gardens, forest, EV charging, and direct access to
-                            the Centennial Trail.
-                        </p>
-                        <p>
-                            Condo fees are $477/month and include heat,
-                            electricity, water, internet, snow removal, and
-                            garbage. Sewage is approximately $500/year
-                            separately.
-                        </p>
-                    </div>
-
-                    <aside class="detail-panel" aria-label="Property details">
-                        <div class="detail-row">
-                            <span>Address</span>
-                            <strong>1-25 Treehouse Lane</strong>
-                        </div>
-                        <div class="detail-row">
-                            <span>Built</span>
-                            <strong>2024</strong>
-                        </div>
-                        <div class="detail-row">
-                            <span>Construction</span>
-                            <strong>Passive House</strong>
-                        </div>
-                        <div class="detail-row">
-                            <span>Monthly condo fee</span>
-                            <strong>$477</strong>
-                        </div>
-                        <div class="detail-row">
-                            <span>Owner sale</span>
-                            <strong>No listing agent</strong>
-                        </div>
-                    </aside>
-                </div>
-            </section>
-
-            <section class="highlight-band" id="community">
-                <div class="section">
-                    <div class="section-heading">
-                        <h2>Why this home feels different</h2>
-                        <p>
-                            The apartment is private, efficient, and
-                            accessible. The community adds room to gather,
-                            make, work, host, garden, and explore.
-                        </p>
-                    </div>
-
-                    <div class="highlight-grid">
-                        <article class="highlight">
-                            <span>01</span>
-                            <h3>Low-energy comfort</h3>
-                            <p>
-                                Passive House construction keeps the home warm
-                                in winter, cool in summer, and quiet year-round.
-                            </p>
-                        </article>
-                        <article class="highlight">
-                            <span>02</span>
-                            <h3>Shared spaces</h3>
-                            <p>
-                                Use the great hall, kitchen, workshop, gym,
-                                studio, coworking lounge, guest rooms, and
-                                forest trails.
-                            </p>
-                        </article>
-                        <article class="highlight">
-                            <span>03</span>
-                            <h3>Walkable South Shore life</h3>
-                            <p>
-                                Groceries, schools, recreation, riverfront
-                                shops, and the Centennial Trail are close by.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="photos">
-                <div class="section-heading">
-                    <h2>Apartment photos</h2>
-                    <p>
-                        Interior apartment photos are being prepared. These
-                        placeholders mark the planned views so the listing can
-                        be updated cleanly when the images are ready.
-                    </p>
-                </div>
-
-                <div class="placeholder-grid" aria-label="Apartment photo placeholders">
-                    <div class="placeholder-photo">
-                        <span>Coming soon</span>
-                        <strong>Open living area</strong>
-                    </div>
-                    <div class="placeholder-photo">
-                        <span>Coming soon</span>
-                        <strong>Kitchen</strong>
-                    </div>
-                    <div class="placeholder-photo">
-                        <span>Coming soon</span>
-                        <strong>Primary bedroom</strong>
-                    </div>
-                    <div class="placeholder-photo">
-                        <span>Coming soon</span>
-                        <strong>Second bedroom</strong>
-                    </div>
-                    <div class="placeholder-photo">
-                        <span>Coming soon</span>
-                        <strong>Bathroom</strong>
-                    </div>
-                    <div class="placeholder-photo">
-                        <span>Coming soon</span>
-                        <strong>Entry and mudroom</strong>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" aria-labelledby="shared-spaces-title">
-                <div class="section-heading">
-                    <h2 id="shared-spaces-title">Shared spaces gallery</h2>
-                    <p>
-                        Current photos show the community amenities included
-                        with the home: places to cook, gather, work, make, move,
-                        store bikes, charge EVs, and step into the forest.
-                    </p>
-                </div>
-
-                <div class="gallery-grid">
-                    <button
-                        class="gallery-card featured lightbox-trigger"
-                        type="button"
+                <div class="hero-gallery reveal">
+                    <figure
+                        class="shot lightbox-trigger"
+                        role="button"
+                        tabindex="0"
                         data-full="images/12_Common_great-hall_1024by768.jpg"
                         data-caption="Community great hall"
                     >
                         <img
                             src="images/12_Common_great-hall_1024by768.jpg"
-                            alt="Community great hall with tables, skylights, and windows"
+                            alt="Sunlit community great hall with long tables, skylights, and bunting"
                         />
-                        <span>Community great hall</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/13_Common_kitchen_1024by768.jpg"
-                        data-caption="Community kitchen"
-                    >
-                        <img
-                            src="images/13_Common_kitchen_1024by768.jpg"
-                            alt="Shared community kitchen"
-                        />
-                        <span>Community kitchen</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/15_Common_workshop_1024by768.jpg"
-                        data-caption="Workshop"
-                    >
-                        <img
-                            src="images/15_Common_workshop_1024by768.jpg"
-                            alt="Community workshop"
-                        />
-                        <span>Workshop</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/16_Common_gym_1024by768.jpg"
-                        data-caption="Community gym"
-                    >
-                        <img
-                            src="images/16_Common_gym_1024by768.jpg"
-                            alt="Community gym"
-                        />
-                        <span>Community gym</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/17_Common_lounge-coworking_1024by768.jpg"
-                        data-caption="Lounge and coworking"
-                    >
-                        <img
-                            src="images/17_Common_lounge-coworking_1024by768.jpg"
-                            alt="Shared lounge and coworking area"
-                        />
-                        <span>Lounge and coworking</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/18_Common_Studio_1024by768.jpg"
-                        data-caption="Community studio"
-                    >
-                        <img
-                            src="images/18_Common_Studio_1024by768.jpg"
-                            alt="Community studio"
-                        />
-                        <span>Studio</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/19_Common_ev-charging_768by1024.jpg"
-                        data-caption="EV charging"
-                    >
-                        <img
-                            src="images/19_Common_ev-charging_768by1024.jpg"
-                            alt="EV charging station"
-                        />
-                        <span>EV charging</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
-                        data-full="images/20_Common_bicycle-stg_1024by768.jpg"
-                        data-caption="Bicycle storage"
-                    >
-                        <img
-                            src="images/20_Common_bicycle-stg_1024by768.jpg"
-                            alt="Indoor bicycle storage"
-                        />
-                        <span>Bicycle storage</span>
-                    </button>
-                    <button
-                        class="gallery-card lightbox-trigger"
-                        type="button"
+                        <span class="expand" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        </span>
+                        <figcaption class="shot-tag">The great hall</figcaption>
+                    </figure>
+                    <figure
+                        class="shot lightbox-trigger"
+                        role="button"
+                        tabindex="0"
                         data-full="images/21_Common_forest_768by1024.jpg"
-                        data-caption="Forest trails"
+                        data-caption="Forest trails on the 16-acre property"
                     >
                         <img
                             src="images/21_Common_forest_768by1024.jpg"
-                            alt="Forest trail at Treehouse Village"
+                            alt="Sunlit forest trail through tall trees on the property"
                         />
-                        <span>Forest trails</span>
-                    </button>
+                        <span class="expand" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        </span>
+                        <figcaption class="shot-tag">Forest trails</figcaption>
+                    </figure>
+                </div>
+
+                <div class="facts">
+                    <div class="fact accent">
+                        <span>Price</span>
+                        <strong>$549,000</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Home</span>
+                        <strong>3 bd &middot; 2 ba</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Floor area</span>
+                        <strong>1,269 ft&sup2;</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Built</span>
+                        <strong>2024</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Envelope</span>
+                        <strong>Passive House</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Condo fee</span>
+                        <strong>$477 / mo</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main id="main">
+            <section class="section" id="home">
+                <div class="wrap">
+                    <p class="chapter-eyebrow reveal">01 &middot; The home</p>
+                    <h2 class="display chapter-word reveal">The home</h2>
+
+                    <div class="intro-grid">
+                        <div class="prose reveal">
+                            <p class="lead">
+                                A quiet, light-filled apartment on the ground
+                                floor, with room to breathe and a whole village
+                                just outside the door.
+                            </p>
+                            <p>
+                                Built in 2024, this three-bedroom, two-bath condo
+                                is designed for easy daily life: an open living
+                                area, big windows, an accessible kitchen and
+                                bathrooms, and bedrooms set away from the noise.
+                                It sits in a car-free garden courtyard, so the
+                                first thing you meet outside is people and trees,
+                                not parking.
+                            </p>
+                            <p>
+                                The home is part of Treehouse Village Ecohousing,
+                                a 16-acre intergenerational community with a
+                                shared dining hall, workshop, coworking lounge,
+                                gym, studio, guest rooms, gardens, forest, EV
+                                charging, and direct access to the Centennial
+                                Trail.
+                            </p>
+                            <p>
+                                The $477 monthly condo fee covers heat,
+                                electricity, water, internet, snow removal, and
+                                garbage. Sewage runs roughly $500 a year on top
+                                of that.
+                            </p>
+                        </div>
+
+                        <aside class="detail-panel reveal" aria-label="Property details">
+                            <h3>At a glance</h3>
+                            <div class="detail-row">
+                                <span>Address</span>
+                                <strong>1&ndash;25 Treehouse Lane</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Built</span>
+                                <strong>2024</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Construction</span>
+                                <strong>Passive House</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Ceilings</span>
+                                <strong>8 ft 8 in</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Monthly fee</span>
+                                <strong>$477</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>Sale</span>
+                                <strong>Owner direct</strong>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="community">
+                <div class="wrap">
+                    <p class="chapter-eyebrow reveal">02 &middot; The village</p>
+                    <h2 class="display chapter-word reveal">The village</h2>
+
+                    <div class="block reveal">
+                        <figure
+                            class="block-media lightbox-trigger"
+                            role="button"
+                            tabindex="0"
+                            data-full="images/13_Common_kitchen_1024by768.jpg"
+                            data-caption="Community kitchen and dining"
+                        >
+                            <img
+                                src="images/13_Common_kitchen_1024by768.jpg"
+                                alt="Large shared community kitchen with island and range"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                        </figure>
+                        <div class="block-body">
+                            <h3>Cook for one, or host for thirty.</h3>
+                            <p>
+                                Beyond your own kitchen, the community kitchen
+                                and great hall give you space for big dinners,
+                                birthdays, and shared meals without cramming
+                                everyone into the apartment. Bring the
+                                celebration; leave the cleanup to a room built
+                                for it.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="block flip reveal">
+                        <figure
+                            class="block-media lightbox-trigger"
+                            role="button"
+                            tabindex="0"
+                            data-full="images/17_Common_lounge-coworking_1024by768.jpg"
+                            data-caption="Lounge and coworking space"
+                        >
+                            <img
+                                src="images/17_Common_lounge-coworking_1024by768.jpg"
+                                alt="Bright shared lounge and coworking area with desks and chairs"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                        </figure>
+                        <div class="block-body">
+                            <h3>A workshop, a studio, a place to work.</h3>
+                            <p>
+                                Work from the coworking lounge, build something
+                                in the workshop, get a session in at the gym, or
+                                make art in the studio. The everyday extras most
+                                condos never offer are a short walk across the
+                                courtyard.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="statement" aria-label="Passive House comfort">
+                <div class="wrap">
+                    <p class="display reveal">
+                        Warm in winter. Cool in summer. Quiet all year.
+                    </p>
+                    <p class="reveal">
+                        Passive House construction wraps the home in a tight,
+                        well-insulated envelope, so it stays comfortable on far
+                        less energy. Lower bills, steadier temperatures, and a
+                        noticeably calmer indoor feel.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section" id="photos">
+                <div class="wrap">
+                    <div class="section-head reveal">
+                        <div>
+                            <p class="chapter-eyebrow">03 &middot; Inside</p>
+                            <h2 class="head">Apartment photos are on the way</h2>
+                        </div>
+                        <p class="muted">
+                            We are getting interior photos taken now. Until they
+                            are up, here are the rooms you will see. Want a look
+                            sooner? Ask us for a showing or a video walk-through.
+                        </p>
+                    </div>
+
+                    <div class="ph-grid reveal" aria-label="Apartment rooms, photos coming soon">
+                        <div class="ph-card">
+                            <span class="tag">Coming soon</span>
+                            <strong>Open living area</strong>
+                        </div>
+                        <div class="ph-card">
+                            <span class="tag">Coming soon</span>
+                            <strong>Kitchen</strong>
+                        </div>
+                        <div class="ph-card">
+                            <span class="tag">Coming soon</span>
+                            <strong>Primary bedroom</strong>
+                        </div>
+                        <div class="ph-card">
+                            <span class="tag">Coming soon</span>
+                            <strong>Second bedroom</strong>
+                        </div>
+                        <div class="ph-card">
+                            <span class="tag">Coming soon</span>
+                            <strong>Bathroom</strong>
+                        </div>
+                        <div class="ph-card">
+                            <span class="tag">Coming soon</span>
+                            <strong>Entry &amp; mudroom</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="shared-title">
+                <div class="wrap">
+                    <div class="section-head reveal">
+                        <div>
+                            <p class="chapter-eyebrow">Shared spaces</p>
+                            <h2 class="head" id="shared-title">
+                                The amenities that come with the home
+                            </h2>
+                        </div>
+                        <p class="muted">
+                            Cook, gather, work, make, move, store the bikes,
+                            charge the car, and step straight into the forest.
+                            Tap any photo to view it full size.
+                        </p>
+                    </div>
+
+                    <div class="gallery-grid reveal">
+                        <button
+                            class="gallery-card featured lightbox-trigger"
+                            type="button"
+                            data-full="images/12_Common_great-hall_1024by768.jpg"
+                            data-caption="Community great hall"
+                        >
+                            <img
+                                src="images/12_Common_great-hall_1024by768.jpg"
+                                alt="Community great hall with tables, skylights, and windows"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                            <span class="shot-tag">Great hall</span>
+                        </button>
+                        <button
+                            class="gallery-card lightbox-trigger"
+                            type="button"
+                            data-full="images/15_Common_workshop_1024by768.jpg"
+                            data-caption="Workshop"
+                        >
+                            <img
+                                src="images/15_Common_workshop_1024by768.jpg"
+                                alt="Community workshop"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                            <span class="shot-tag">Workshop</span>
+                        </button>
+                        <button
+                            class="gallery-card lightbox-trigger"
+                            type="button"
+                            data-full="images/16_Common_gym_1024by768.jpg"
+                            data-caption="Community gym"
+                        >
+                            <img
+                                src="images/16_Common_gym_1024by768.jpg"
+                                alt="Community gym"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                            <span class="shot-tag">Gym</span>
+                        </button>
+                        <button
+                            class="gallery-card lightbox-trigger"
+                            type="button"
+                            data-full="images/18_Common_Studio_1024by768.jpg"
+                            data-caption="Community studio"
+                        >
+                            <img
+                                src="images/18_Common_Studio_1024by768.jpg"
+                                alt="Community studio"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                            <span class="shot-tag">Studio</span>
+                        </button>
+                        <button
+                            class="gallery-card lightbox-trigger"
+                            type="button"
+                            data-full="images/19_Common_ev-charging_768by1024.jpg"
+                            data-caption="EV charging"
+                        >
+                            <img
+                                src="images/19_Common_ev-charging_768by1024.jpg"
+                                alt="EV charging station"
+                            />
+                            <span class="expand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </span>
+                            <span class="shot-tag">EV charging</span>
+                        </button>
+                    </div>
                 </div>
             </section>
 
             <section class="section" id="features">
-                <div class="section-heading">
-                    <h2>Home, costs, and community</h2>
-                    <p>
-                        The home includes practical finishes and appliances, and
-                        the monthly fee covers several everyday utilities.
-                    </p>
-                </div>
+                <div class="wrap">
+                    <div class="section-head reveal">
+                        <div>
+                            <p class="chapter-eyebrow">What's included</p>
+                            <h2 class="head">Home, appliances, and amenities</h2>
+                        </div>
+                        <p class="muted">
+                            Move-in ready, with the appliances staying and the
+                            monthly fee carrying most of the utilities.
+                        </p>
+                    </div>
 
-                <div class="feature-columns">
-                    <article class="feature-block">
-                        <h3>Home features</h3>
-                        <ul class="check-list">
-                            <li>Ground-floor wheelchair-accessible layout</li>
-                            <li>Open floor plan with abundant natural light</li>
-                            <li>8 ft. 8 in. ceilings</li>
-                            <li>Heat pump and air conditioning</li>
-                            <li>Revwood Premier laminate flooring</li>
-                            <li>Solid surface kitchen countertops</li>
-                        </ul>
-                    </article>
+                    <div class="feature-cols reveal">
+                        <article class="feature-block">
+                            <h3>The home</h3>
+                            <ul class="check-list">
+                                <li>Ground-floor, wheelchair-accessible layout</li>
+                                <li>Open plan with abundant natural light</li>
+                                <li>8 ft 8 in ceilings</li>
+                                <li>Heat pump and air conditioning</li>
+                                <li>Revwood Premier laminate flooring</li>
+                                <li>Solid-surface kitchen countertops</li>
+                            </ul>
+                        </article>
 
-                    <article class="feature-block">
-                        <h3>Included appliances</h3>
-                        <ul class="check-list">
-                            <li>Haier counter-depth 4-door refrigerator</li>
-                            <li>GE Profile stainless steel range</li>
-                            <li>GE stainless steel dishwasher</li>
-                            <li>Midea 24 in. washer and dryer</li>
-                            <li>Over $5,600 in appliances included</li>
-                        </ul>
-                    </article>
+                        <article class="feature-block">
+                            <h3>Appliances included</h3>
+                            <ul class="check-list">
+                                <li>Haier counter-depth 4-door refrigerator</li>
+                                <li>GE Profile stainless steel range</li>
+                                <li>GE stainless steel dishwasher</li>
+                                <li>Midea 24 in washer and dryer</li>
+                                <li>Over $5,600 in appliances, staying with the home</li>
+                            </ul>
+                        </article>
 
-                    <article class="feature-block">
-                        <h3>Shared amenities</h3>
-                        <ul class="check-list">
-                            <li>Community kitchen and dining hall</li>
-                            <li>Workshop, studio, gym, and coworking</li>
-                            <li>Reservable guest bedrooms</li>
-                            <li>Gardens, forest, zipline, and trail access</li>
-                            <li>EV charging and EV car sharing</li>
-                        </ul>
-                    </article>
+                        <article class="feature-block">
+                            <h3>Shared amenities</h3>
+                            <ul class="check-list">
+                                <li>Community kitchen and dining hall</li>
+                                <li>Workshop, studio, gym, and coworking</li>
+                                <li>Reservable guest bedrooms</li>
+                                <li>Gardens, forest, zipline, and trail access</li>
+                                <li>EV charging and EV car sharing</li>
+                            </ul>
+                        </article>
+                    </div>
                 </div>
             </section>
 
             <section class="section" id="media">
-                <div class="section-heading">
-                    <h2>Video and floor plan</h2>
-                    <p>
-                        Tour the community spaces, then open the floor plan for
-                        a closer look at the apartment layout.
-                    </p>
-                </div>
-
-                <div class="media-shell">
-                    <div class="media-tabs" role="tablist" aria-label="Media">
-                        <button
-                            class="media-tab"
-                            type="button"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="panel-video"
-                            id="tab-video"
-                        >
-                            Video
-                        </button>
-                        <button
-                            class="media-tab"
-                            type="button"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="panel-floorplan"
-                            id="tab-floorplan"
-                        >
-                            Floor plan
-                        </button>
+                <div class="wrap">
+                    <div class="section-head reveal">
+                        <div>
+                            <p class="chapter-eyebrow">Tour</p>
+                            <h2 class="head">Video and floor plan</h2>
+                        </div>
+                        <p class="muted">
+                            Walk the community spaces on video, then open the
+                            floor plan for the apartment layout.
+                        </p>
                     </div>
 
-                    <div
-                        class="media-panel is-active"
-                        role="tabpanel"
-                        id="panel-video"
-                        aria-labelledby="tab-video"
-                    >
-                        <div class="video-card">
-                            <div>
+                    <div class="media-shell reveal">
+                        <div class="media-tabs" role="tablist" aria-label="Media">
+                            <button
+                                class="media-tab"
+                                type="button"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="panel-video"
+                                id="tab-video"
+                            >
+                                Video tour
+                            </button>
+                            <button
+                                class="media-tab"
+                                type="button"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="panel-floorplan"
+                                id="tab-floorplan"
+                            >
+                                Floor plan
+                            </button>
+                        </div>
+
+                        <div
+                            class="media-panel is-active"
+                            role="tabpanel"
+                            id="panel-video"
+                            aria-labelledby="tab-video"
+                        >
+                            <div class="video-card">
                                 <h3>Treehouse Village video tour</h3>
                                 <p>
-                                    A look at the shared spaces and community
+                                    A walk through the shared spaces and the
                                     setting around the home.
                                 </p>
                                 <a
-                                    class="button primary"
+                                    class="btn btn-primary"
                                     href="https://api.smugmug.com/services/embed/17431209601_NtBKT5S?width=1920&height=1080&albumId=454553260&albumKey=ZZtVWZ"
                                     target="_blank"
                                     rel="noopener"
-                                    >Open video tour</a
+                                    >Play video tour</a
                                 >
                             </div>
                         </div>
-                    </div>
 
-                    <div
-                        class="media-panel"
-                        role="tabpanel"
-                        id="panel-floorplan"
-                        aria-labelledby="tab-floorplan"
-                    >
-                        <div class="split-media" style="padding: 1.2rem">
-                            <div class="floorplan-preview">
-                                <button
-                                    class="lightbox-trigger"
-                                    type="button"
-                                    data-full="images/floorplan.png"
-                                    data-caption="1-25 Treehouse Lane floor plan"
-                                >
-                                    <img
-                                        src="images/floorplan.png"
-                                        alt="Floor plan for 1-25 Treehouse Lane"
-                                    />
-                                </button>
-                            </div>
-                            <div class="prose">
-                                <h3>Ground-floor layout</h3>
-                                <p>
-                                    The plan supports accessible day-to-day
-                                    living with three bedrooms, two bathrooms,
-                                    and an open kitchen, dining, and living
-                                    area.
-                                </p>
+                        <div
+                            class="media-panel"
+                            role="tabpanel"
+                            id="panel-floorplan"
+                            aria-labelledby="tab-floorplan"
+                        >
+                            <div class="floorplan-panel">
+                                <div class="floorplan-preview">
+                                    <button
+                                        class="lightbox-trigger"
+                                        type="button"
+                                        data-full="images/floorplan.png"
+                                        data-caption="1-25 Treehouse Lane floor plan"
+                                    >
+                                        <img
+                                            src="images/floorplan.png"
+                                            alt="Floor plan for 1-25 Treehouse Lane"
+                                        />
+                                    </button>
+                                </div>
+                                <div>
+                                    <h3>Ground-floor layout</h3>
+                                    <p>
+                                        Three bedrooms, two bathrooms, and an
+                                        open kitchen, dining, and living area,
+                                        all on one accessible level. Tap the plan
+                                        to view it full size.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
             <section class="section" id="location">
-                <div class="section-heading">
-                    <h2>Walkable Bridgewater location</h2>
-                    <p>
-                        Treehouse Village connects directly to the Centennial
-                        Trail, with daily errands, recreation, and riverfront
-                        stops close by.
-                    </p>
-                </div>
+                <div class="wrap">
+                    <p class="chapter-eyebrow reveal">04 &middot; The place</p>
+                    <h2 class="display chapter-word reveal">The place</h2>
 
-                <div class="location-wrap">
-                    <div>
-                        <h3>1-25 Treehouse Lane</h3>
-                        <p class="contact-note">
-                            Bridgewater, Nova Scotia B4V 9H9
-                        </p>
-                        <ul class="walk-list" style="margin-top: 1.5rem">
-                            <li><span>Bus stop</span><strong>9 min</strong></li>
-                            <li><span>NSCC / YMCA</span><strong>11 min</strong></li>
-                            <li>
-                                <span>Elementary school</span
-                                ><strong>12 min</strong>
-                            </li>
-                            <li>
-                                <span>Grocery, post office, pharmacy</span
-                                ><strong>14 min</strong>
-                            </li>
-                            <li><span>Day care</span><strong>16 min</strong></li>
-                            <li>
-                                <span>River restaurants and shops</span
-                                ><strong>16 min</strong>
-                            </li>
-                            <li>
-                                <span>Pool, library, arena</span
-                                ><strong>18 min</strong>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="location-wrap">
+                        <div class="reveal">
+                            <h3 class="head" style="font-size: clamp(1.5rem, 2.4vw, 2rem)">
+                                Walkable Bridgewater
+                            </h3>
+                            <p class="muted" style="margin-top: 0.6rem">
+                                1&ndash;25 Treehouse Lane, Bridgewater, NS B4V 9H9.
+                                The property connects directly to the Centennial
+                                Trail, with daily errands and the riverfront
+                                close by.
+                            </p>
+                            <ul class="walk-list">
+                                <li><span>Bus stop</span><strong>9 min</strong></li>
+                                <li><span>NSCC / YMCA</span><strong>11 min</strong></li>
+                                <li><span>Elementary school</span><strong>12 min</strong></li>
+                                <li><span>Grocery, post office, pharmacy</span><strong>14 min</strong></li>
+                                <li><span>Day care</span><strong>16 min</strong></li>
+                                <li><span>River restaurants and shops</span><strong>16 min</strong></li>
+                                <li><span>Pool, library, arena</span><strong>18 min</strong></li>
+                            </ul>
+                        </div>
 
-                    <div class="map-frame">
-                        <img
-                            src="images/walkability-map.jpeg"
-                            alt="Map showing walking times from Treehouse Village to Bridgewater amenities"
-                        />
+                        <div class="map-frame reveal">
+                            <img
+                                src="images/walkability-map.jpeg"
+                                alt="Map showing walking times from Treehouse Village to Bridgewater amenities"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="contact-band" id="contact">
-                <div class="section">
+            <section class="contact" id="contact">
+                <div class="wrap">
                     <div class="contact-grid">
-                        <div>
-                            <p class="eyebrow" style="color: var(--clay)">
-                                For sale by owner
-                            </p>
-                            <h2>Contact Emily and Bastian</h2>
-                            <p class="lead" style="margin-top: 1.2rem">
-                                Ask a question, request a showing, or talk
-                                through whether Treehouse Village could be a fit.
+                        <div class="reveal">
+                            <p class="chapter-eyebrow">For sale by owner</p>
+                            <h2 class="display chapter-word" style="margin-bottom: 1.4rem">
+                                Talk to us
+                            </h2>
+                            <p class="lead">
+                                Ask a question, book a showing, or just talk
+                                through whether Treehouse Village is the right
+                                fit. You will be talking to the owners, not an
+                                agent.
                             </p>
                         </div>
 
-                        <aside class="owner-box">
-                            <div>
-                                <div class="owner-names">
-                                    Emily Kashul<br />Bastian Gruber
-                                </div>
-                                <p class="contact-note">Owners</p>
+                        <aside class="owner-box reveal">
+                            <div class="owner-names">
+                                Emily Kashul<br />Bastian Gruber
                             </div>
+                            <p class="owner-role">Owners</p>
                             <div class="owner-actions">
-                                <a
-                                    class="button primary"
-                                    href="tel:+19022984382"
-                                    >Call/text</a
+                                <a class="btn btn-primary" href="tel:+19022984382"
+                                    >Call / text</a
                                 >
                                 <a
-                                    class="button secondary"
+                                    class="btn btn-outline"
                                     href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane"
                                     >Email</a
                                 >
                             </div>
-                            <p class="contact-note">
-                                +1-902-298-4382. Text or call, and please leave
-                                a message if there is no answer.
+                            <p class="owner-line">
+                                <a href="tel:+19022984382">+1 902 298 4382</a>
+                                &middot; call or text, and leave a message if
+                                there is no answer.
                             </p>
-                            <p class="contact-note">embastic@icloud.com</p>
-                            <a class="button secondary" href="brochure.html"
-                                >Open printable brochure</a
+                            <p class="owner-line">
+                                <a href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane"
+                                    >embastic@icloud.com</a
+                                >
+                            </p>
+                            <a class="btn btn-outline" href="brochure.html"
+                                >Open the printable brochure</a
                             >
                         </aside>
                     </div>
@@ -1744,42 +1956,29 @@
         </main>
 
         <footer>
-            <strong>Treehouse Village Ecohousing</strong>
-            <span>1-25 Treehouse Lane, Bridgewater, NS B4V 9H9</span>
+            <div class="wrap footer-inner">
+                <span>
+                    <strong>Treehouse Village Ecohousing</strong><br />
+                    1&ndash;25 Treehouse Lane, Bridgewater, NS B4V 9H9
+                </span>
+                <span>For sale by owner &middot; $549,000 CAD</span>
+            </div>
         </footer>
 
         <nav class="mobile-contact" aria-label="Contact shortcuts">
-            <a class="button primary" href="tel:+19022984382">Call/text</a>
+            <a class="btn btn-primary" href="tel:+19022984382">Call / text</a>
             <a
-                class="button secondary"
+                class="btn btn-outline"
                 href="mailto:embastic@icloud.com?subject=Inquiry%20about%201-25%20Treehouse%20Lane"
                 >Email</a
             >
-            <a class="button secondary" href="brochure.html">Brochure</a>
+            <a class="btn btn-outline" href="brochure.html">Brochure</a>
         </nav>
 
         <div class="lightbox" id="lightbox" aria-hidden="true">
-            <button
-                class="lightbox-close"
-                type="button"
-                aria-label="Close image viewer"
-            >
-                x
-            </button>
-            <button
-                class="lightbox-prev"
-                type="button"
-                aria-label="Previous image"
-            >
-                <
-            </button>
-            <button
-                class="lightbox-next"
-                type="button"
-                aria-label="Next image"
-            >
-                >
-            </button>
+            <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+            <button class="lightbox-prev" type="button" aria-label="Previous image">&#8249;</button>
+            <button class="lightbox-next" type="button" aria-label="Next image">&#8250;</button>
             <figure class="lightbox-figure">
                 <img
                     id="lightbox-image"
@@ -1794,8 +1993,7 @@
             const header = document.getElementById("site-header");
             const lightbox = document.getElementById("lightbox");
             const lightboxImage = document.getElementById("lightbox-image");
-            const lightboxCaption =
-                document.getElementById("lightbox-caption");
+            const lightboxCaption = document.getElementById("lightbox-caption");
             const lightboxTriggers = Array.from(
                 document.querySelectorAll(".lightbox-trigger"),
             );
@@ -1810,11 +2008,9 @@
                 activeImage =
                     (index + lightboxTriggers.length) % lightboxTriggers.length;
                 const trigger = lightboxTriggers[activeImage];
-                const src = trigger.dataset.full;
-                const caption = trigger.dataset.caption || "";
-                lightboxImage.src = src;
-                lightboxImage.alt = caption;
-                lightboxCaption.textContent = caption;
+                lightboxImage.src = trigger.dataset.full;
+                lightboxImage.alt = trigger.dataset.caption || "";
+                lightboxCaption.textContent = trigger.dataset.caption || "";
             }
 
             function openLightbox(index) {
@@ -1846,6 +2042,14 @@
 
             lightboxTriggers.forEach((trigger, index) => {
                 trigger.addEventListener("click", () => openLightbox(index));
+                if (trigger.getAttribute("role") === "button") {
+                    trigger.addEventListener("keydown", (event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            openLightbox(index);
+                        }
+                    });
+                }
             });
 
             document
@@ -1875,15 +2079,34 @@
                     });
                     document
                         .querySelectorAll(".media-panel")
-                        .forEach((panel) => {
-                            panel.classList.remove("is-active");
-                        });
+                        .forEach((panel) => panel.classList.remove("is-active"));
                     tab.setAttribute("aria-selected", "true");
                     document
                         .getElementById(tab.getAttribute("aria-controls"))
                         .classList.add("is-active");
                 });
             });
+
+            const prefersReduced = window.matchMedia(
+                "(prefers-reduced-motion: reduce)",
+            ).matches;
+            const reveals = document.querySelectorAll(".reveal");
+            if (prefersReduced || !("IntersectionObserver" in window)) {
+                reveals.forEach((el) => el.classList.add("in"));
+            } else {
+                const io = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("in");
+                                io.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+                );
+                reveals.forEach((el) => io.observe(el));
+            }
         </script>
     </body>
 </html>
