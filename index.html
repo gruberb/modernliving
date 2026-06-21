@@ -595,6 +595,7 @@
             }
 
             .chapter-eyebrow {
+                margin: 0 0 0.7rem;
                 color: var(--peach);
                 font-size: 0.82rem;
                 font-weight: 700;
@@ -734,15 +735,30 @@
 
             /* ---------- Placeholders ---------- */
             .section-head {
-                display: grid;
-                grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-                gap: 2.5rem;
-                align-items: end;
                 margin-bottom: 2.8rem;
             }
 
+            .daily-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: clamp(2rem, 5vw, 4.5rem);
+                align-items: start;
+            }
+
+            .daily-deck {
+                margin: 1.2rem 0 0;
+                max-width: 32ch;
+                color: var(--cream);
+                font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+                font-weight: 500;
+                line-height: 1.4;
+            }
+
             .section-head .muted {
-                font-size: 1.05rem;
+                margin: 1.1rem 0 0;
+                max-width: 62ch;
+                font-size: 1.1rem;
+                line-height: 1.55;
             }
 
             .ph-grid {
@@ -1261,6 +1277,7 @@
 
                 .intro-grid,
                 .block,
+                .daily-grid,
                 .location-wrap,
                 .contact-grid,
                 .section-head,
@@ -1644,27 +1661,27 @@
 
             <section class="section" id="daily-life" aria-labelledby="daily-title">
                 <div class="wrap">
-                    <div class="section-head reveal">
-                        <div>
+                    <div class="daily-grid">
+                        <div class="reveal">
                             <p class="chapter-eyebrow">A day here</p>
                             <h2 class="head" id="daily-title">
                                 What daily life can look like
                             </h2>
+                            <p class="daily-deck">
+                                Community when you want it, quiet when you don't.
+                            </p>
                         </div>
-                        <p class="muted">
-                            Community when you want it, quiet when you don't.
-                        </p>
-                    </div>
-                    <div class="prose reveal" style="max-width: 64ch">
-                        <p>
-                            Make breakfast in your own kitchen. Work from the
-                            coworking lounge when you want a change of scene. Let
-                            visitors stay in reservable guest rooms instead of
-                            squeezing into your spare bedroom. Borrow a tool
-                            instead of buying one. Walk straight onto the
-                            Centennial Trail. Join a shared meal when it suits
-                            you, or have a quiet evening at home.
-                        </p>
+                        <div class="prose reveal">
+                            <p>
+                                Make breakfast in your own kitchen. Work from the
+                                coworking lounge when you want a change of scene.
+                                Let visitors stay in reservable guest rooms
+                                instead of squeezing into your spare bedroom.
+                                Borrow a tool instead of buying one. Walk straight
+                                onto the Centennial Trail. Join a shared meal when
+                                it suits you, or have a quiet evening at home.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

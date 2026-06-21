@@ -5,6 +5,33 @@ All notable changes to the 1-25 Treehouse Lane listing site are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-06-21
+
+Hero and layout refinements following the initial overhaul.
+
+### Added
+- Full-bleed photo header with the title overlaid and a gradient scrim for
+  legibility. The image is a single, well-commented swap point for a future
+  interior/exterior photo.
+- Floating spec card (Price, Bedrooms, Bathrooms, Home size, Shared land) with
+  line icons, kept to a single row at every width via fluid `clamp()` scaling.
+- Mobile contact bar now stays hidden over the hero and slides up only after
+  the hero (which carries its own call/email buttons) scrolls out of view.
+
+### Changed
+- Section headers now stack the supporting line as a deck beneath the headline
+  instead of floating it in a second column.
+- Reworked the daily-life section into a balanced two-column block (heading and
+  deck on the left, body copy on the right).
+- Tightened vertical rhythm: reduced section padding and hero spacing, and
+  loosened the oversized headline line-height so the lines no longer collide.
+
+### Fixed
+- Brochure photo strip and stats now collapse on small screens instead of
+  cropping into thin vertical slivers.
+- Removed stray default paragraph margins that were knocking supporting text
+  out of alignment.
+
 ## [1.0.0] - 2026-06-20
 
 Full visual overhaul of the listing site and printable brochure.
