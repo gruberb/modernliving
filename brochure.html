@@ -491,12 +491,52 @@
                     width: min(100%, 8.5in);
                     min-height: auto;
                     margin: 0 auto;
-                    padding: 1.2rem;
+                    padding: 1.4rem;
+                }
+
+                .masthead {
+                    grid-template-columns: 1fr;
+                    gap: 0.6rem;
+                    align-items: start;
+                }
+
+                .price {
+                    justify-self: start;
                 }
 
                 .two-col,
                 .floor-map,
-                .grid-3 {
+                .grid-3,
+                .section-title {
+                    grid-template-columns: 1fr;
+                }
+
+                .stats,
+                .photo-strip {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .photo-card img {
+                    height: auto;
+                    aspect-ratio: 4 / 3;
+                }
+
+                .contact-strip {
+                    grid-template-columns: 1fr;
+                    gap: 0.6rem;
+                }
+
+                .contact-actions {
+                    text-align: left;
+                }
+            }
+
+            @media screen and (max-width: 460px) {
+                .stats {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .photo-strip {
                     grid-template-columns: 1fr;
                 }
             }
